@@ -95,5 +95,16 @@ $post_list = new WP_Query($args);
 </section>
 
 <?php
+
 get_footer();
 
+?>
+
+
+
+
+
+<?php
+
+
+get_footer();

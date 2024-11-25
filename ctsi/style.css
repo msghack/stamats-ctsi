@@ -2,7 +2,7 @@
 Theme Name: Indiana CTSI
 Description: Custom Theme for Indiana CTSI
 Author: Subham Banerjee
-Version: 1.2
+Version: 1.10
 */
 
 
@@ -33,14 +33,26 @@ a {
     transition: .3s all ease-in-out;
 }
 
-@media (max-width:991px) {
+@media (width < 992px) {
     .hidden_Mobile {
         display: none !important;
     }
 }
 
-@media (min-width:992px) {
+@media (width >= 992px) {
     .hidden_Desktop {
+        display: none !important;
+    }
+}
+
+@media (width < 1200px) {
+    .hidden_Mobile_header {
+        display: none !important;
+    }
+}
+
+@media (width >= 1200px) {
+    .hidden_Desktop_header {
         display: none !important;
     }
 }
@@ -50,12 +62,11 @@ a {
         max-width: 86%;
     }
 }
-
+.wp-block-custom-container.container {
+    margin: 72px auto;
+    overflow: hidden;
+}
 @media (min-width:992px) {
-    .wp-block-custom-container.container {
-        margin: 72px auto;
-        overflow: hidden;
-    }
 
     .ImgCard_Container .image-carousel {
         margin-left: auto;
@@ -207,7 +218,7 @@ h4 {
 /** Accordion **/
 
 .accordion_Wrapper {
-    margin-top: 72px;
+    /* margin-top: 72px; */
     margin-bottom: 72px;
 }
 
@@ -216,7 +227,7 @@ h2.accordion-header:before {
 }
 
 main .accordion {
-    margin-top: 60px;
+    /* margin-top: 60px; */
     border-top: 1px solid rgba(0, 165, 219, 40%);
     border-bottom: 1px solid rgba(0, 165, 219, 40%)
 }
@@ -375,7 +386,7 @@ main button.accordion-button:not(.collapsed) {
     margin-right: auto;
 }
 
-@media (max-width:991px) {
+@media (width < 1200px) {
     .section_Nav {
         width: 100%;
         border-top: #990000 1px solid;
@@ -389,9 +400,20 @@ main button.accordion-button:not(.collapsed) {
         width: 86%;
         margin: auto;
     }
+    
+    .section_Nav ul {
+        position: absolute;
+        background-color: white;
+        border-bottom: #990000 1px solid;
+        left: 0;
+    }
+
+    .section_Nav ul li {
+        padding-inline: 7%;
+    }
 }
 
-@media (min-width:992px) and (max-width:1365px) {
+@media (width >= 1200px) and (width < 1365px) {
     .section_Nav {
         width: 86%;
     }
@@ -426,7 +448,7 @@ main button.accordion-button:not(.collapsed) {
     padding: 0;
 }
 
-@media (min-width:992px) {
+@media (width >= 1200px) {
     .section_Nav_Title {
         pointer-events: none;
     }
@@ -495,13 +517,13 @@ main button.accordion-button:not(.collapsed) {
     left: 0;
 }
 
-@media (min-width:992px) {
+@media (width >= 1200px) {
     .section_Nav ul li {
         margin-bottom: 5px;
     }
 }
 
-@media (max-width:991px) {
+@media (width < 1200px) {
 
     .section_Nav ul li a,
     .section_Nav ul li.active {
@@ -618,6 +640,14 @@ p img {
     width: fit-content;
 } */
 
+.wp-block-custom-container :is(h2, h3):not(:first-child) {
+  margin-top: 72px;
+}
+.wp-block-custom-container > :last-child:not(h2),
+.wp-block-custom-container > :last-child :last-child {
+  margin-bottom: 0 !important;
+}
+
 @media (min-width:481px) {
     .wp-block-custom-container>h2 {
         display: flex;
@@ -665,7 +695,7 @@ main ol li {
     color: #000;
     font-size: 17px;
     line-height: 28px;
-    padding-bottom: 14px;
+    margin-bottom: 14px;
     padding-left: 0;
 }
 
@@ -738,7 +768,7 @@ p.Intro_Text,
 .is-style-intro {
     font-size: 20px;
     line-height: 40px;
-    margin-bottom:50px; /* added */
+    margin-bottom:72px; /* added */
 }
 
 /** Hexagon Button **/
@@ -894,7 +924,7 @@ p.Intro_Text,
     text-decoration: underline;
 }
 
-.navbar-expand-lg.MainMenu ul.navbar-nav li.nav-item a.nav-link {
+.navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item a.nav-link {
     font-family: 'Roboto_Lt';
     font-weight: 300;
     font-size: 20px;
@@ -919,7 +949,7 @@ header {
     z-index: 99;
 }
 
-@media all and (min-width: 992px) {
+@media all and (width >= 1200px) {
     .UtilityBar {
         margin-top: 19px;
     }
@@ -959,7 +989,7 @@ header {
         text-decoration: underline;
     }
 
-    .navbar-expand-lg.MainMenu ul.navbar-nav li.nav-item a.nav-link:before {
+    .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item a.nav-link:before {
         content: '';
         position: absolute;
         bottom: -4px;
@@ -972,8 +1002,8 @@ header {
         z-index: 1001;
     }
 
-    .navbar-expand-lg.MainMenu ul.navbar-nav li.nav-item a.nav-link:hover:before,
-    .navbar-expand-lg.MainMenu ul.navbar-nav li.nav-item a.nav-link:focus:before {
+    .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item a.nav-link:hover:before,
+    .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item a.nav-link:focus:before {
         opacity: 1;
         width: 100%;
     }
@@ -984,7 +1014,7 @@ header {
         padding: 0;
     }
 
-    .navbar-expand-lg.MainMenu ul.navbar-nav li.nav-item {
+    .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item {
         padding: 0 5px; /* changed from 0 20px */
     } /* stamats nav test */
 
@@ -1017,7 +1047,7 @@ header {
         position: static;
     }
 
-    .navbar-expand-lg {
+    .navbar-expand-xl {
         position: unset;
     }
 
@@ -1080,7 +1110,7 @@ header {
         position: absolute;
     }
 
-    .navbar-expand-lg.MainMenu ul.navbar-nav li.nav-item a.nav-link.dropdown-toggle.show:after {
+    .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item a.nav-link.dropdown-toggle.show:after {
         content: '';
         width: 100%;
         height: 4px;
@@ -1269,12 +1299,12 @@ header {
 
 }
 
-@media all and (min-width: 992px) and (max-width:1280px) {
-    .navbar-expand-lg.MainMenu ul.navbar-nav li.nav-item {
+@media all and (width >= 1200px) and (width < 1280px) {
+    .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item {
         padding: 0 5px;
     }
 
-    .navbar-expand-lg.MainMenu ul.navbar-nav li.nav-item a.nav-link {
+    .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item a.nav-link {
         font-size: 18px;
     }
 
@@ -1295,7 +1325,7 @@ header {
     }
 }
 
-@media (min-width:992px) and (max-width:1200px) {
+/*@media (min-width:992px) and (max-width:1200px) {
     .CTSI_logo img {
         max-width: 250px;
         margin-bottom: 20px;
@@ -1304,9 +1334,9 @@ header {
     .navbar .megamenu {
         margin-top: -19px;
     }
-}
+}*/
 
-@media all and (max-width: 991px) {
+@media all and (width < 1200px) {
 
     .mobile_menu_wrapper .navbar {
         position: unset;
@@ -1375,7 +1405,7 @@ header {
         max-width: 227px;
     }
 
-    .navbar-expand-lg.MainMenu ul.navbar-nav li.nav-item a.nav-link.dropdown-toggle:after {
+    .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item a.nav-link.dropdown-toggle:after {
         background: url(/wp-content/themes/ctsi/assets/images/plus.svg);
         border: none;
         width: 18px;
@@ -1387,7 +1417,7 @@ header {
         transition: transform .2s ease-in-out;
     }
 
-    .navbar-expand-lg.MainMenu ul.navbar-nav li.nav-item a.nav-link.dropdown-toggle.show:after {
+    .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item a.nav-link.dropdown-toggle.show:after {
         transform: rotate(135deg);
     }
 
@@ -1407,21 +1437,21 @@ header {
         margin-bottom: 20px;
     }
 
-    .navbar-expand-lg.MainMenu ul.navbar-nav li.nav-item a.nav-link {
+    .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item a.nav-link {
         padding-left: 20px;
         padding-right: 20px;
         padding-top: 9px;
         padding-bottom: 10px;
     }
 
-    .navbar-expand-lg.MainMenu ul.navbar-nav li.nav-item a.nav-link {
+    .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item a.nav-link {
         font-size: 22px;
         line-height: 29px;
         color: #000;
     }
 
-    .navbar-expand-lg.MainMenu ul.navbar-nav li.nav-item a.nav-link:hover,
-    .navbar-expand-lg.MainMenu ul.navbar-nav li.nav-item a.nav-link:focus {
+    .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item a.nav-link:hover,
+    .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item a.nav-link:focus {
         color: #000;
     }
 
@@ -1829,7 +1859,7 @@ header {
     filter: grayscale(0);
 }
 
-@media (min-width:992px) {
+@media (width >= 992px) {
 
     .FooterMenu_Wrapper {
         padding-top: 98px;
@@ -1890,7 +1920,7 @@ header {
     }
 }
 
-@media all and (min-width: 992px) and (max-width:1279px) {
+@media all and (width >= 992px) and (width < 1279px) {
     .ResourceMenu {
         padding-left: 15px;
         padding-right: 15px;
@@ -1905,7 +1935,7 @@ header {
     }
 }
 
-@media (max-width:991px) {
+@media (width < 992px) {
 
     .FooterMenu_Wrapper,
     .ResourceMenu_Wrapper,
@@ -2078,7 +2108,7 @@ z-index: 9;
     .interior_Banner h1 {
         width: 1164px;
     }
-    .navbar-expand-lg.MainMenu ul.navbar-nav li.nav-item { /* stamats nav testing */
+    .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item { /* stamats nav testing */
         padding: 0 5px;
     }
 }
@@ -2310,7 +2340,7 @@ z-index: 9;
 /** Icon Links Start **/
 
 .iconLinks_Wrapper {
-    margin-bottom: 90px;
+    margin-bottom: 72px;
 }
 
 .iconLinks_Wrapper h2 {
@@ -2856,8 +2886,8 @@ a.media-showcase-click:focus h4 {
 /** Location Block start **/
 
 .locationBlock {
-    margin-top: 72px;
-    margin-bottom: 96px;
+    /* margin-top: 72px; */
+    margin-bottom: 72px;
 }
 
 .locationBlock h2:before {
@@ -2991,7 +3021,7 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 /** Cards start **/
 
 .cardsWrapper {
-    margin: 72px 0;
+    margin-bottom: 72px;
     padding: 72px 0;
 }
 
@@ -3284,7 +3314,7 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 /** Image Card Carousel start **/
 
 .ImageCard_Carousel {
-    margin-top: 72px;
+    /* margin-top: 72px; */
     margin-bottom: 72px;
 }
 .ImageCard_Title {
@@ -3486,6 +3516,7 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 .buttonCTA {
     align-items: center;
     padding: 48.5px 0;
+    margin-bottom: 72px;
 }
 
 .buttonCTA .Button_Link,
@@ -3544,8 +3575,12 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 
 /** Announcements Start **/
 
+.announcement-block {
+    margin-bottom: 72px;
+}
+
 .announcement_Wrapper {
-    margin: 23.5px 0;
+    /* margin: 23.5px 0; */
     display: inline-block;
     width: 100%;
     border: #8E6F3E 1px solid;
@@ -3807,7 +3842,7 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 /** News block start **/
 
 .news_block_section {
-    margin: 72px 0;
+    margin-bottom: 72px;
 }
 
 ul.wp-block-latest-posts {
@@ -3996,12 +4031,12 @@ ul.wp-block-latest-posts li a:hover .wp-block-latest-posts__post-title {
     margin-bottom: 67px;
 }
 
-@media (max-width:991px) {
+/* @media (max-width:991px) {
     .wp-block-custom-container.container {
         margin-bottom: 40px;
         margin-top: 40px;
     }
-}
+} */
 
 @media (max-width:480px) {
     .wp-block-post-author {
@@ -4039,14 +4074,20 @@ ul.wp-block-latest-posts li a:hover .wp-block-latest-posts__post-title {
 
 /** Table start **/
 
-.wp-block-table {
+/* .wp-block-table {
     margin: 0;
+} */
+.wp-block-table:not(:first-child) {
+  margin-top: 72px;
+}
+.wp-block-table:not(:last-child) {
+  margin-bottom: 72px;
 }
 
-.wp-block-table table,
+/* .wp-block-table table,
 .wp-element-caption {
     margin-bottom: 72px;
-}
+} */
 
 .wp-element-caption {
     font-family: 'Roboto_Lt';
@@ -4282,7 +4323,6 @@ p.is-style-table-intro {
 
 .ContactBlock {
     margin-bottom: 72px;
-    margin-top: 72px;
 }
 
 .ContactBlock h2 {
