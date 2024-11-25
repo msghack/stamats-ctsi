@@ -82,13 +82,13 @@ function create_bootstrap_menu($theme_location)
             $menu_list .= '<li class="nav-item dropdown has-megamenu"> <a class="nav-link dropdown-toggle" href="javascript:void(0);" data-bs-toggle="dropdown">' . $value->title . '</a>' . "\n";
             $menu_list .= '<div class="dropdown-menu megamenu" role="menu">' . "\n";
             $menu_list .= '<div class="container">' . "\n";
-            $menu_list .= '<div class="closeNavButton_Wrapper hidden_Mobile">' . "\n";
+            $menu_list .= '<div class="closeNavButton_Wrapper hidden_Mobile_header">' . "\n";
             $menu_list .= '<a class="closeNavButton" data-bs-toggle="dropdown"><img src="/wp-content/themes/ctsi/assets/images/close.svg" alt="close"></a>' . "\n";
             $menu_list .= '</div>' . "\n";
             $menu_list .= '<div class="row g-0">' . "\n";
 
                 if ($column_choice == "left" && !empty($left_content_text_area)) {
-                    $menu_list .= '<div class="col-lg-4 col-12 megamenu_Details hidden_Mobile">' . "\n";
+                    $menu_list .= '<div class="col-lg-4 col-12 megamenu_Details hidden_Mobile_header">' . "\n";
                     $menu_list .= '<div class="col-megamenu">' . "\n";
                     $menu_list .= '<a role="menuitem" target="'.$target.'" href="' . $value->url . '" class="megamenu_Details_Title">' . $value->title . '<svg xmlns="http://www.w3.org/2000/svg"
                             width="16" height="16" fill="#990000" class="bi bi-chevron-right" viewBox="0 0 16 16">
@@ -102,7 +102,7 @@ function create_bootstrap_menu($theme_location)
             foreach ($value->wpse_children as $key => $children) {
                 $column_choice = get_field('column_choice', $children);
                 $menu_link_description = get_field('menu_link_description', $children);
-                $description = !empty($menu_link_description) ? '<br><span class="hidden_Mobile">' . $menu_link_description . '</span>' . "\n" : "";
+                $description = !empty($menu_link_description) ? '<br><span class="hidden_Mobile_header">' . $menu_link_description . '</span>' . "\n" : "";
                 $target =  $children->target === '_blank' ? '_blank' : '_self';
 
                 if ($column_choice === 'one') {
@@ -397,4 +397,3 @@ function custom_block_excerpt($excerpt)
     return $excerpt;
 }
 
-add_filter('get_the_excerpt', 'custom_block_excerpt');

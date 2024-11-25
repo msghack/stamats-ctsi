@@ -315,7 +315,7 @@ jQuery(document).ready(function () {
 // }
 
 jQuery(window).on('resize', function () {
-  if (window.matchMedia("(max-width: 992px)").matches) {
+  if (window.matchMedia("(max-width: 991px)").matches) {
     jQuery(".ResourceMenu_Wrapper").addClass('accordion accordion-flush');
     jQuery(".ResourceMenu").addClass('accordion-item');
     jQuery(".ResourceMenuTitle").addClass('accordion-header');
@@ -336,7 +336,3 @@ jQuery(window).on('resize', function () {
 
 
 });
-
-
-
-

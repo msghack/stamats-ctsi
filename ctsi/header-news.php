@@ -30,7 +30,7 @@ $utility_links = get_field("utility_links", "option");
     </div>
 
     <header class="header-news" id="header">
-        <div class="container d-flex flex-wrap hidden_Mobile UtilityBar_Wrapper">
+        <div class="container d-flex flex-wrap hidden_Mobile_header UtilityBar_Wrapper">
             <nav class="ms-auto">
                 <ul class="nav UtilityBar">
                     <?php foreach ($utility_links as $key => $value) {
@@ -52,21 +52,21 @@ $utility_links = get_field("utility_links", "option");
             </nav>
         </div>
         <div class="container d-flex flex-wrap">
-            <a href="<?php echo esc_url(home_url('/')); ?>" class="d-flex align-items-center me-lg-auto CTSI_logo"><img
+            <a href="<?php echo esc_url(home_url('/')); ?>" class="d-flex align-items-center me-xl-auto CTSI_logo"><img
                     src="<?= get_field("header_logo", "option")["url"] ?>"
                     alt="<?= get_field("header_logo", "option")["alt"] ?>"></a>
-            <div class="col-lg-auto mobile_menu_wrapper">
-                <nav class="navbar navbar-expand-lg MainMenu" role="navigation">
+            <div class="col-xl-auto mobile_menu_wrapper">
+                <nav class="navbar navbar-expand-xl MainMenu" role="navigation">
                     <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
                         aria-expanded="true" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="main_nav">
                         <?php create_bootstrap_menu("main-menu-links") ?>
-                        <div class="col-12 hidden_Desktop searchBar_Wrapper_Mobile">
+                        <div class="col-12 hidden_Desktop_header searchBar_Wrapper_Mobile">
                             <?php echo get_field("search_shortcode", "option"); ?>
                         </div>
-                        <ul class="hidden_Desktop UtilityBar_mobile list-unstyled">
+                        <ul class="hidden_Desktop_header UtilityBar_mobile list-unstyled">
                             <?php foreach ($utility_links as $key => $value) {
                                 // var_dump($value["search"]);
                                 if ($value["menu_link"]) { ?>
