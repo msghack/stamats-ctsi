@@ -2,7 +2,7 @@
 Theme Name: Indiana CTSI
 Description: Custom Theme for Indiana CTSI
 Author: Subham Banerjee
-Version: 1.0.11
+Version: 1.0.12
 */
 
 
@@ -393,7 +393,7 @@ main button.accordion-button:not(.collapsed) {
         border-bottom: #990000 1px solid;
         padding-top: 20px;
         padding-bottom: 0;
-	background-color: #fff;
+  background-color: #fff;
     }
 
     .section_Nav_Inner {
