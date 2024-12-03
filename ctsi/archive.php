@@ -96,3 +96,5 @@ $post_list = new WP_Query($args);
     </div>
 </section>
 
+<?php get_footer(); ?>
+
