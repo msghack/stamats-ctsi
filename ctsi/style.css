@@ -464,6 +464,7 @@ main button.accordion-button:not(.collapsed) {
 
 .section_Nav ul {
     margin: 0;
+    width: 100%;
 }
 
 .section_Nav ul li {
@@ -606,9 +607,9 @@ p img {
     margin: 6px 0 20px 0;
 }
 
-.wp-block-image .aligncenter {
+/* .wp-block-image .aligncenter {
     margin: 6px 20px;
-}
+} */
 
 .wp-block-image .aligncenter>figcaption,
 .wp-block-image .alignleft>figcaption,
@@ -640,9 +641,9 @@ p img {
     width: fit-content;
 } */
 
-.wp-block-custom-container :is(h2, h3):not(:first-child) {
+/* .wp-block-custom-container :is(h2, h3):not(:first-child) {
   margin-top: 72px;
-}
+} */
 .wp-block-custom-container > :last-child:not(h2),
 .wp-block-custom-container > :last-child :last-child {
   margin-bottom: 0 !important;
@@ -2062,7 +2063,14 @@ header {
 
 .interior_Banner {
     position: relative;
-    min-height: 450px; /* stamats banner test code */
+    overflow-x: clip;
+    z-index: 1;
+/*     min-height: 450px; */
+}
+
+.interior_Banner_Img {
+    position: absolute;
+    z-index: -1;
 }
 
 .interior_Banner_Img img {
@@ -2070,7 +2078,7 @@ header {
 }
 
 .interior_Banner_Content {
-    position: absolute;
+/*     position: absolute; */
     left: 0;
     top: 0;
     width: 100%;
@@ -2086,7 +2094,7 @@ z-index: 9;
 @media (min-width:992px) and (max-width:1279px) {
 
     .interior_Banner {
-        min-height: 360px;
+/*         min-height: 360px; */
     }
 
     .interior_Banner h1 {
@@ -2123,7 +2131,7 @@ z-index: 9;
 
     .interior_Banner {
         /*height: 547px;*/
-        min-height: 400px; /* stamats banner test */
+/*         min-height: 400px; */
     }
 
     .interior_Banner_Img {
@@ -2146,7 +2154,7 @@ z-index: 9;
 }
 @media (max-width:480px) {
     .interior_Banner {
-        min-height: 480px; /* stamats banner test, class added */
+/*         min-height: 480px;  */
     }
 }
 /** Interior Banner End **/
@@ -2207,7 +2215,7 @@ z-index: 9;
 
 .home_Banner .CTA_wrapper .Button_Link {
     margin-right: 30px;
-    margin-top: 32px;
+/*     margin-top: 32px; */
     margin-bottom: 0;
 }
 
@@ -2295,9 +2303,9 @@ z-index: 9;
         top: 205px;
     }
 
-    .home_Banner .CTA_wrapper .Button_Link {
+/*     .home_Banner .CTA_wrapper .Button_Link {
         margin-top: 21px;
-    }
+    } */
 
 }
 
@@ -2440,21 +2448,22 @@ z-index: 9;
 .mediaShowcase_wrapper {
     padding: 72px 0;
     flex-direction: row;
-    gap: 99px;
+    gap: 72px;
     margin-bottom: 72px;
+    align-items: center;
 }
 
 .mediaShowcase_Img {
     width: 372px;
-    height: 372px;
+/*     height: 372px; */
     position: relative;
     flex: 1 0 374px;
     /* flex-grow, flex-shrink, flex-basis */
 }
 
-.mediaShowcase_Img img {
+/* .mediaShowcase_Img img {
     border: #00A5DB 1px solid;
-}
+} */
 
 .playButton button {
     position: absolute;
@@ -2503,7 +2512,7 @@ z-index: 9;
 }
 
 .mediaShowcase_Cont {
-    align-self: flex-end;
+/*     align-self: flex-end; */
     flex: 1 0 calc(100% - 473px);
 }
 
@@ -2547,6 +2556,14 @@ main .mediaShowcase_Cont ul:not(.list-unstyled) li {
     font-size: 20px;
     line-height: 32px;
     padding-bottom: 0;
+}
+main .mediaShowcase_Cont ol:not(.list-unstyled) li {
+  padding-left: 0;
+  font-family: 'Roboto_Lt';
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 32px;
+  padding-bottom: 0;
 }
 
 main .mediaShowcase_Cont ul:not(.list-unstyled) li:before {
@@ -2647,6 +2664,10 @@ main .mediaShowcase_Cont .wp-block-buttons .wp-block-button a.wp-block-button__l
 .patternBg ul li a,
 .patternBg ul li a:hover,
 .patternBg ul li a:focus,
+.patternBg ol li,
+.patternBg ol li a,
+.patternBg ol li a:hover,
+.patternBg ol li a:focus,
 .ImageBg h2,
 .ImageBg h2 a,
 .ImageBg h2 a:hover,
@@ -4320,6 +4341,19 @@ p.is-style-table-intro {
 /** Table end **/
 
 /** Contact block start **/
+
+.contact-card-container.dark_blue {
+    background-color: #0C2340;
+}
+.contact-card-container.dark_blue * {
+  color: white;
+}
+.contact-card-inner-container-text {
+  padding: 65px 40px;
+}
+.contact-image-area {
+    min-height: 400px;
+}
 
 .ContactBlock {
     margin-bottom: 72px;
