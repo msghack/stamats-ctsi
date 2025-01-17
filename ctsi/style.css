@@ -2,7 +2,7 @@
 Theme Name: Indiana CTSI
 Description: Custom Theme for Indiana CTSI
 Author: Subham Banerjee
-Version: 1.0.13
+Version: 1.0.14
 */
 
 
@@ -4113,8 +4113,8 @@ ul.wp-block-latest-posts li a:hover .wp-block-latest-posts__post-title {
 .wp-element-caption {
     font-family: 'Roboto_Lt';
     font-weight: 300;
-    font-size: 17px;
-    line-height: 28px;
+    font-size: 10px;
+    line-height: 20px;
     color: #000;
 }
 
