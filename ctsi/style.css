@@ -2775,7 +2775,7 @@ main .mediaShowcase_Cont .wp-block-buttons .wp-block-button a.wp-block-button__l
 
 @media (max-width:991px) {
 
-    main .mediaShowcase_Cont ul:not(.list-unstyled) li,
+    main .mediaShowcase_Cont :is(ul, ol):not(.list-unstyled) li,
     main .mediaShowcase_Cont p {
         font-size: 17px;
         line-height: 26px;
