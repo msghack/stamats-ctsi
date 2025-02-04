@@ -1,22 +1,32 @@
 <?php
-function mytheme_preload_fonts()
-{
-?>
-    <link rel="preload" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/fonts/Roboto-Black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/fonts/Roboto-Condensed.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/fonts/Roboto-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/fonts/Roboto-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/fonts/Roboto-Thin.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
-<?php
+
+function fonts_load() {
+
+  $font_dir = '.'."/assets/fonts";
+  $font_exts = [
+    'woff2',
+    'woff',
+    'ttf',
+    'otf',
+  ];
+
+  $format =   '<link rel="preload" '
+            . 'href="%s" '
+            . 'as="font" '
+            . 'type="font/%s" '
+            . 'crossorigin="anonymous"> %s'
+            ;
+  $fh = opendir( $font_dir );
+  while( $entry = readdir( $fh ) ) {
+    $ext = mb_strtolower( pathinfo( $entry, PATHINFO_EXTENSION ) );
+    if( in_array( $ext, $font_exts ) ) {
+      printf( $format, $entry, $ext, PHP_EOL );
+    }
+  }
 }
-add_action('wp_head', 'mytheme_preload_fonts', 1);
 
-
-
-
+add_action('wp_head', 'fonts_load', 1);
 
 function styles_enqueues()
 {
