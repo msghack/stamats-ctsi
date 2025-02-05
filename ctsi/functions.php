@@ -3,7 +3,7 @@
 
 function fonts_load() {
 
-  $font_dir = '.'."/assets/fonts";
+  $font_dir = get_stylesheet_directory()."/assets/fonts";
   $font_exts = [
     'woff2',
     'woff',
