@@ -1,25 +1,94 @@
 /*
   Theme Name: Indiana CTSI
   Description: Custom Theme for Indiana CTSI
-  Author: 
-  Version: 2.0.0 
+  Author:
+  Version: 2.0.0
 */
 
-@primary_background_color       : #0C2340;
-@primary_font_family            : 'Roboto';
+:root {
+  //
+  // changes base font size to 10pt. purely to make
+  // base size calculations easier
+  font-size                   : 62.5%;
+}
 
+@iu_red                       : #990000;
+@pu_gold                      : #b1810b;
+@nd_blue                      : #0e2240;
+@ri_blue                      : #00a5db;
+@light_grey                   : #ededed;
+@medium_grey                  : #929292;
+@dark_grey                    : #707070;
+@highlight_yellow             : #ffc731;
+
+@font_color_base              : black;
+@font_color_inverse           : white;
+@font_color_alt               : @nd_blue;
+@font_color_highlight         : @highlight_yellow;
+@font_color_table_header      : @nd_blue;
+
+@font_family_base             : 'Roboto';
+@font_family_light            : 'Roboto_Lt';
+@font_family_medium           : 'Roboto_Md';
+@font_family_heavy            : 'Roboto_Bk';
+@font_family_bold             : 'Roboto_Bk';
+@font_size_base               : 1.6rem;
+
+@font_weight_base             : 400;
+@font_weight_light            : 300;
+@font_weight_medium           : 500;
+@font_weight_heavy            : 700;
+@font_weight_bold             : 700;
+
+@background_color_base        : white;
+@background_color_inverse     : black;
+@background_color_alt         : @nd_blue;
+@background_color_highlight   : @highlight_yellow;
+@background_color_tint_1      : @light_grey;
+@background_color_tint_2      : @medium_grey;
+@background_color_tint_3      : @dark_grey;
+
+@background_color_base_translucent :  #ffffffd9;
+
+
+//
+// social yellow was (18 feb 25):    #8E6F3E;
+@background_color_social      : @pu_gold;
+
+@border_color_base            : black;
+@border_color_inverse         : white;
+@border_color_highlight       : @highlight_yellow;
+@border_color_tint_1          : @light_grey;
+@border_color_tint_1          : @medium_grey;
+@border_color_tint_3          : @dark_grey;
+@border_color_social          : @pu_gold;
+@border_color_accordion       : #00a5db66;
+
+@line_height_compressed       : 1;
+@line_height_base             : 1.5;
+@line_height_expanded         : 2;
+
+@tiny_viewport                : 480px;
+@small_viewport               : 768px;
+@medium_viewport              : 1280px;
+@large_viewport               : 1600px;
+@extra_large_viewport         : 1900px;
+
+.block-directory-downloadable-blocks-panel {
+  display: none;
+}
 
 .darkBg {
-  background-color: @primary_background_color;
+  background-color: @background_color_alt;
 }
 
 
 /** Global style start **/
 
 body {
-  font-family: @primary_font_family;
+  font-family: @font_family_base;
   overflow-x: hidden;
-  color: #000;
+  color: @font_color_base;
 }
 
 .container {
@@ -31,40 +100,40 @@ a {
   transition: .3s all ease-in-out;
 }
 
-@media (width < 992px) {
+@media (width < @medium_viewport) {
   .hidden_Mobile {
     display: none !important;
   }
 }
 
-@media (width >= 992px) {
+@media (width >= @medium_viewport ) {
   .hidden_Desktop {
     display: none !important;
   }
 }
 
-@media (width < 1200px) {
+@media (width < @medium_viewport) {
   .hidden_Mobile_header {
     display: none !important;
   }
 }
 
-@media (width >= 1200px) {
+@media (width >= @medium_viewport) {
   .hidden_Desktop_header {
     display: none !important;
   }
 }
 
-@media (max-width:1365px) {
+@media (max-width:@medium_viewport) {
   .container {
-    max-width: 86%;
+    max-width: 85%;
   }
 }
 .wp-block-custom-container.container {
-  margin: 72px auto;
+  margin: 7.2rem auto;
   overflow: hidden;
 }
-@media (min-width:992px) {
+@media (min-width:@medium_viewport ) {
 
   .ImgCard_Container .image-carousel {
     margin-left: auto;
@@ -83,7 +152,7 @@ a {
   }
 }
 
-@media (min-width:992px) and (max-width:1365px) {
+@media (min-width:@small_viewport) and (max-width:@medium_viewport) {
 
   .wp-block-custom-container.container,
   .accordion_Wrapper .container,
@@ -94,9 +163,9 @@ a {
   }
 }
 
-@media (min-width:1366px) {
+@media (min-width:@medium_viewport) {
   .container {
-    max-width: 1164px;
+    max-width: 85%;
   }
 
   .wp-block-custom-container.container,
@@ -104,13 +173,13 @@ a {
   .announcement-block .container,
   .ImgCard_Container .container,
   .ImgCard_Container .image-carousel {
-    max-width: 960px;
+    max-width: 85%;
   }
 }
 
-@media (min-width:1440px) {
+@media (min-width:@medium_viewport) {
   .container {
-    max-width: 88%;
+    max-width: 85%;
   }
 
   .wp-block-custom-container.container,
@@ -122,15 +191,15 @@ a {
   }
 }
 
-@media (min-width:992px) {
+@media (min-width:@small_viewport) {
   .ContactBlock .container {
-    padding-right: 36px; */
-    max-width: 960px;
+    padding-right: 3.6rem;
+    max-width: 96.0rem;
   }
 }
 
 .form-check-input {
-  border: 1px solid @primary_background_color;
+  border: 1px solid @border_color_base;
 }
 
 .form-check-input[type=checkbox] {
@@ -138,84 +207,84 @@ a {
 }
 
 .form-check-input:checked {
-  background-color: @primary_background_color;
-  border-color: @primary_background_color;
+  background-color: @background_color_alt;
+  border-color: @background_color_alt;
 }
 
 .form-check-input:focus {
-  border-color: @primary_background_color;
+  border-color: @border_color_base;
 }
 
 /** Heading **/
 
 h1 {
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
-  font-size: 48px;
-  line-height: 48px;
-  color: #000;
-  margin-bottom: 30px;
+  font-family     : @font_family_light;
+  font-weight     : @font_weight_light;
+  font-size       : 4.8rem;
+  line-height     : @line_height_base;
+  color           : @font_color_base;
+  margin-bottom   : 3.0rem;
 }
 
 h2 {
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
-  font-size: 34px;
-  line-height: 40px;
-  color: #000;
+  font-family: @font_family_light;
+  font-weight: @font_weight_light;
+  font-size: 3.4rem;
+  line-height: @line_height_base;
+  color: @font_color_base;
   position: relative;
-  margin-bottom: 36px;
+  margin-bottom: 3.6rem;
 }
 
 h2 a {
-  color: #000;
+  color: @font_color_base;
 }
 
 h2 a:hover,
 h2 a:focus {
-  color: #000;
+  color: @font_color_base;
 }
 
 h2:before {
   content: '';
-  width: 110px;
-  height: 5px;
-  background: #FFC731;
+  width: 11.0rem;
+  height: 0.5rem;
+  background: @background_color_highlight;
   display: inline-block;
   left: 0;
   bottom: -12px;
   position: absolute;
 }
 
-@media (max-width: 991px) {
+@media (max-width: @medium_viewport) {
   h2 {
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 2.4rem;
+    line-height: @line_height_base;
   }
 }
 
 h3 {
-  font-family: @primary_font_family;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 30px;
-  color: #000;
-  margin-bottom: 10px;
+  font-family: @font_family_base;
+  font-weight: @font_weight_base;
+  font-size: 2.2rem;
+  line-height: @line_height_base;
+  color: @font_color_base;
+  margin-bottom: 1.0rem;
 }
 
 h4 {
-  font-family: @primary_font_family;
-  font-weight: 700;
-  font-size: 17px;
-  line-height: 22px;
-  color: #000;
-  margin-bottom: 5px;
+  font-family: @font_family_base;
+  font-weight: @font_weight_bold;
+  font-size: 1.7rem;
+  line-height: @line_height_base;
+  color: @font_color_base;
+  margin-bottom: 0.5rem;
 }
 
 /** Accordion **/
 
 .accordion_Wrapper {
-  margin-bottom: 72px;
+  margin-bottom: 7.2rem;
 }
 
 h2.accordion-header:before {
@@ -223,34 +292,34 @@ h2.accordion-header:before {
 }
 
 main .accordion {
-  border-top: 1px solid rgba(0, 165, 219, 40%);
-  border-bottom: 1px solid rgba(0, 165, 219, 40%)
+  border-top: 1px solid @border_color_accordion;
+  border-bottom: 1px solid @border_color_accordion;
 }
 
 main .accordion-item {
-  border-top: 1px solid rgba(0, 165, 219, 40%);
-  border-bottom: 1px solid rgba(0, 165, 219, 40%)
+  border-top: 1px solid @border_color_accordion;
+  border-bottom: 1px solid @border_color_accordion;
 }
 
 main .accordion-item ul:not(.list-unstyled),
 main ol {
-  margin-bottom: 30px;
+  margin-bottom: 3.0rem;
 }
 
-/* 
+/*
 main ol {
   list-style-position: inside;
-} 
+}
 */
 
 main .accordion-body {
-  padding: 0 0 0 86px;
+  padding: 0 0 0 8.6rem;
 }
 
 main button.accordion-button {
   position: relative;
-  border-color: #00A5DB;
-  padding: 24px 0 23px 86px;
+  border-color: @ri_blue;
+  padding: 2.4rem 0 2.3rem 8.6rem;
   transition: .3s all ease-in-out;
 }
 
@@ -258,7 +327,7 @@ main button.accordion-button:hover,
 main button.accordion-button:focus {
   border: none;
   box-shadow: none;
-  background: #F4F6F6;
+  background: @background_color_tint_1;
 }
 
 main button.accordion-button:after {
@@ -273,7 +342,7 @@ main button.accordion-button:before {
   content: '';
   transition: transform .2s ease-in-out;
   transform: rotate(135deg);
-  left: 30px;
+  left: 3.0rem;
   position: absolute;
 }
 
@@ -282,27 +351,27 @@ main button.accordion-button.collapsed:before {
 }
 
 main button.accordion-button {
-  font-family: 'Roboto_Md';
-  font-size: 17px;
-  line-height: 23px;
-  color: #000;
+  font-family: @font_family_medium;
+  font-size: 1.7rem;
+  line-height: @line_height_base;
+  color: @font_color_base;
 }
 
 main button.accordion-button:not(.collapsed) {
   box-shadow: none;
   background-color: transparent;
-  color: #000;
+  color: @font_color_base;
 }
 
-@media (max-width:767px) {
+@media (max-width:@small_viewport) {
 
   main .accordion-body,
   main button.accordion-button {
-    padding-left: 36px;
+    padding-left: 3.6rem;
   }
 
   main button.accordion-button:before {
-    left: 6px;
+    left: 0.6rem;
   }
 
 }
@@ -311,97 +380,79 @@ main button.accordion-button:not(.collapsed) {
 
 .breadcrumb_Nav {
   margin: auto;
+  width: 85%;
 }
 
-@media (max-width:1365px) {
-  .breadcrumb_Nav {
-    width: 86%;
-  }
-}
-
-@media (min-width:1366px) {
-  .breadcrumb_Nav {
-    width: 1164px;
-  }
-}
-
-@media (min-width:1440px) {
-  .breadcrumb_Nav {
-    width: 88%;
-  }
-}
 
 .breadcrumb {
   margin-bottom: 14px;
   align-items: baseline;
-  margin-top: 20px;
+  margin-top: 2.0rem;
 }
 
 .breadcrumb li.breadcrumb-item {
-  padding: 0
+  padding: 0;
 }
 
 .breadcrumb li.breadcrumb-item.active {
-  font-family: @primary_font_family;
-  font-weight: 700;
-  color: #000;
-  font-size: 12px;
-  line-height: 13px;
+  font-family: @font_family_base;
+  font-weight: @font_weight_bold;
+  color: @font_color_base;
+  font-size: 1.2rem;
+  line-height: @line_height_base;
 }
 
 .breadcrumb li.breadcrumb-item a {
-  font-family: 'Roboto_Lt';
-  font-size: 12px;
-  line-height: 13px;
-  color: #000;
-  font-weight: 300;
+  font-family: @font_family_light;
+  font-size: 1.2rem;
+  line-height: @line_height_base;
+  color: @font_color_base;
+  font-weight: @font_weight_light;
   text-decoration: none;
 }
 
 .breadcrumb li.breadcrumb-item a:hover,
 .breadcrumb li.breadcrumb-item a:focus {
-  color: #000;
+  color: @font_color_base;
   text-decoration: underline;
 }
 
 .breadcrumb-item+.breadcrumb-item:before {
-  font-family: 'Roboto_Lt' !important;
-  color: #000;
+  font-family: @font_family_light !important;
+  color: @font_color_base;
   padding-left: 3px;
   padding-right: 3px;
-  font-weight: 300 !important;
-  line-height: 13px;
-  font-size: 12px;
+  font-weight: @font_weight_light !important;
+  line-height: @line_height_base;
+  font-size: 1.2rem;
   float: unset;
 }
 
 /** Section Navigation **/
 
 .section_Nav {
-  margin-top: 68px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top        : 68px;
+  margin-left       : auto;
+  margin-right      : auto;
+  width             : 100%;
+  border-top        : @iu_red 1px solid;
+  border-bottom     : @iu_red 1px solid;
+  padding-top       : 2.0rem;
+  padding-bottom    : 0;
+  background-color  : @background_color_base;
+  width             : 85%;
 }
 
-@media (width < 1200px) {
-  .section_Nav {
-    width: 100%;
-    border-top: #990000 1px solid;
-    border-bottom: #990000 1px solid;
-    padding-top: 20px;
-    padding-bottom: 0;
-    background-color: #fff;
-  }
-
+@media (width < @medium_viewport) {
   .section_Nav_Inner {
-    width: 86%;
+    width: 85%;
     margin: auto;
   }
-  
+
   .section_Nav ul {
     position: absolute;
     background-color: white;
-    border-bottom: #990000 1px solid;
+    border-bottom: @iu_red 1px solid;
     left: 0;
   }
 
@@ -410,42 +461,41 @@ main button.accordion-button:not(.collapsed) {
   }
 }
 
-@media (width >= 1200px) and (width < 1365px) {
+@media (width >= @medium_viewport) and (width < @medium_viewport) {
   .section_Nav {
-    width: 86%;
   }
 }
 
-@media (min-width:1366px) {
+@media (min-width:@medium_viewport) {
   .section_Nav {
-    width: 1164px;
+    width: 85%;
   }
 }
 
-@media (min-width:1440px) {
+@media (min-width:@medium_viewport) {
   .section_Nav {
-    width: 88%;
+    width: 85%;
   }
 }
 
 .section_Nav_Title {
-  font-family: 'Roboto_Md';
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 20px;
-  color: #000;
-  margin-bottom: 10px;
+  font-family: @font_family_medium;
+  font-weight: @font_weight_medium;
+  font-size: 1.5rem;
+  line-height: @line_height_base;
+  color: @font_color_base;
+  margin-bottom: 1rem;
 }
 
 .accordion-button.section_Nav_Title {
-  color: #000;
+  color: @font_color_base;
   background: none;
   border: none;
   box-shadow: none;
   padding: 0;
 }
 
-@media (width >= 1200px) {
+@media (width >= @medium_viewport) {
   .section_Nav_Title {
     pointer-events: none;
   }
@@ -466,15 +516,15 @@ main button.accordion-button:not(.collapsed) {
 
 .section_Nav ul li {
   display: inline-block;
-  padding-right: 20px;
+  padding-right: 2.0rem;
 }
 
 .section_Nav ul li a {
-  font-family: @primary_font_family;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 28px;
-  color: #000;
+  font-family: @font_family_base;
+  font-weight: @font_weight_base;
+  font-size: 1.5rem;
+  line-height: @line_height_base;
+  color: @font_color_base;
   text-decoration: none;
   position: relative;
 }
@@ -484,7 +534,7 @@ main button.accordion-button:not(.collapsed) {
   width: 100%;
   height: 1px;
   display: inline-block;
-  background: #707070;
+  background: @background_color_tint_3;
   bottom: -8px;
   position: absolute;
   left: 0;
@@ -492,40 +542,40 @@ main button.accordion-button:not(.collapsed) {
 
 .section_Nav ul li a:hover:after,
 .section_Nav ul li a:focus:after {
-  background: #990000;
+  background: @iu_red;
   height: 2px;
 }
 
 .section_Nav ul li.active {
-  font-family: @primary_font_family;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 28px;
+  font-family: @font_family_base;
+  font-weight: @font_weight_bold;
+  font-size: 1.5rem;
+  line-height: @line_height_base;
   position: relative;
 }
 
 .section_Nav ul li.active:after {
   content: '';
-  width: calc(100% - 20px);
+  width: calc(100% - 2.0rem);
   height: 1px;
   display: inline-block;
-  background: #707070;
+  background: @background_color_tint_3;
   bottom: -3px;
   position: absolute;
   left: 0;
 }
 
-@media (width >= 1200px) {
+@media (width >= @medium_viewport) {
   .section_Nav ul li {
     margin-bottom: 5px;
   }
 }
 
-@media (width < 1200px) {
+@media (width < @medium_viewport) {
 
   .section_Nav ul li a,
   .section_Nav ul li.active {
-    line-height: 20px;
+    line-height: @line_height_base;
   }
 
   .section_Nav ul li a:after,
@@ -534,13 +584,13 @@ main button.accordion-button:not(.collapsed) {
   }
 
   .section_Nav ul li {
-    padding-bottom: 20px;
+    padding-bottom: 2.0rem;
     width: 100%;
     padding-right: 0;
   }
 
   .section_Nav_Title {
-    margin-bottom: 20px;
+    margin-bottom: 2.0rem;
   }
 
   .accordion-button.section_Nav_Title:after {
@@ -557,55 +607,55 @@ main button.accordion-button:not(.collapsed) {
 
 /** Paragraph **/
 p {
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
-  color: #000;
-  font-size: 17px;
-  line-height: 28px;
-  margin-bottom: 25px; /*margin-bottom: 14px; stamats test padding adjustment */
+  font-family: @font_family_light;
+  font-weight: @font_weight_light;
+  color: @font_color_base;
+  font-size: 1.7rem;
+  line-height: @line_height_base;
+  margin-bottom: 2.5rem; /*margin-bottom: 14px; stamats test padding adjustment */
 }
 
 p strong {
-  font-family: 'Roboto_Md';
-  font-weight: 500;
+  font-family: @font_family_medium;
+  font-weight: @font_weight_medium;
 }
 
 p a {
-  font-family: @primary_font_family;
-  font-weight: 400;
-  color: #990000;
+  font-family: @font_family_base;
+  font-weight: @font_weight_base;
+  color: @iu_red;
   text-decoration: underline;
 }
 
 p a:hover,
 p a:focus {
-  color: #000;
+  color: @font_color_base;
   text-decoration: none;
 }
 
 p img {
-  max-width: 330px;
+  max-width: 33.0rem;
 }
 
 .wp-block-image .alignright {
   float: right;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 2.0rem;
 }
 
 .wp-block-image .alignleft {
   float: left;
-  margin: 0 30px 0 0;
+  margin: 0 3.0rem 0;
 }
 
 /* added class */
 .wp-block-image img {
-  margin: 6px 0 20px 0;
+  margin: 6px 0 2.0rem 0;
 }
 
-/* 
+/*
 .wp-block-image .aligncenter {
-  margin: 6px 20px;
-} 
+  margin: 6px 2.0rem;
+}
 */
 
 .wp-block-image .aligncenter>figcaption,
@@ -620,50 +670,49 @@ p img {
 
 .alignright.is-type-video {
   float: right;
-  margin: 6px 0 20px 20px;
+  margin: 6px 0 2.0rem 2.0rem;
 }
 
 .alignleft.is-type-video {
   float: left;
-  margin: 6px 20px 20px 0;
+  margin: 6px 2.0rem 2.0rem 0;
 }
 
 .is-type-video.aligncenter {
-  margin: 6px 20px;
+  margin: 6px 2.0rem;
 }
 
-/* 
+/*
 .wp-block-custom-container>h2,
 .wp-block-custom-container>h3,
 .wp-block-custom-container>h4 {
   width: fit-content;
-} 
+}
 */
 
-/* 
+/*
 .wp-block-custom-container :is(h2, h3):not(:first-child) {
-  margin-top: 72px;
-} 
+  margin-top: 7.2rem;
+}
 */
 .wp-block-custom-container > :last-child:not(h2),
 .wp-block-custom-container > :last-child :last-child {
   margin-bottom: 0 !important;
 }
 
-@media (min-width:481px) {
+@media ( min-width : @tiny_viewport ) {
   .wp-block-custom-container>h2 {
     display: flex;
   }
 }
 
-@media (max-width:480px) {
-
+@media (max-width:@tiny_viewport) {
   .wp-block-image .alignright,
   .wp-block-image .alignleft,
   .alignright.is-type-video,
   .alignleft.is-type-video {
     float: none;
-    margin: 20px auto;
+    margin: 2.0rem auto;
   }
 }
 
@@ -692,40 +741,40 @@ main ol ul:not(.list-unstyled) li:last-child {
 
 main ul:not(.list-unstyled) li,
 main ol li {
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
-  color: #000;
-  font-size: 17px;
-  line-height: 28px;
-  margin-bottom: 14px;
+  font-family: @font_family_light;
+  font-weight: @font_weight_light;
+  color: @font_color_base;
+  font-size: 1.7rem;
+  line-height: @line_height_base;
+  margin-bottom: 1.4rem;
   padding-left: 0;
 }
 
 main ul:not(.list-unstyled) li a,
 main ol li a {
-  color: #990000;
+  color: @iu_red;
   text-decoration: underline;
-  font-family: @primary_font_family;
-  font-weight: 400;
+  font-family: @font_family_base;
+  font-weight: @font_weight_base;
 }
 
 main ul:not(.list-unstyled) li strong,
 main ol li strong {
-  font-family: 'Roboto_Md';
-  font-weight: 500;
+  font-family: @font_family_medium;
+  font-weight: @font_weight_medium;
 }
 
 main ul:not(.list-unstyled) li a:hover,
 main ul:not(.list-unstyled) li a:focus,
 main ol li a:hover,
 main ol li a:focus {
-  color: #000;
+  color: @font_color_base;
   text-decoration: none;
 }
 
 main ol li::marker {
-  font-family: @primary_font_family;
-  font-weight: 700;
+  font-family: @font_family_base;
+  font-weight: @font_weight_bold;
   letter-spacing: 2px;
 }
 
@@ -739,7 +788,7 @@ main ul:not(.list-unstyled) li:before {
   width: 13px;
   height: 6px;
   display: inline-block;
-  background: #00A5DB;
+  background: @ri_blue;
   transform: skew(-15deg, 0deg);
   position: relative;
   top: -2px;
@@ -756,7 +805,7 @@ main .wp-block-custom-container ol {
   margin-bottom: 14px;
 }
 
-@media (max-width:480px) {
+@media (max-width:@tiny_viewport) {
 
   main ul:not(.list-unstyled),
   main ol {
@@ -768,45 +817,52 @@ main .wp-block-custom-container ol {
 
 p.Intro_Text,
 .is-style-intro {
-  font-size: 20px;
-  line-height: 40px;
-  margin-bottom:72px; /* added */
+  font-size: 2.0rem;
+  line-height: @line_height_expanded;
+  margin-bottom:7.2rem; /* added */
 }
 
 /** Hexagon Button **/
 .Button_Link,
 .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button {
-  background-color: @primary_background_color;
+  background-color: @background_color_alt;
   text-align: center;
   display: inline-block;
-  margin-top: 10px; /* previous 40px; */
-  margin-bottom: 40px;
+  margin-top: 10px; /* previous 4.0rem; */
+  margin-bottom: 4.0rem;
   position: relative;
   text-decoration: none;
-  color: #fff !important;
+  color: @font_color_inverse !important;
   padding: 9px 47.6px !important;
-  font-size: 17px !important;
-  line-height: 22px !important;
-  font-family: @primary_font_family !important;
-  font-weight: 400 !important;
+  font-size: 1.7rem !important;
+  line-height: @line_height_base !important;
+  font-family: @font_family_base !important;
+  font-weight: @font_weight_base !important;
   border-radius: 0 !important;
   border: none;
   user-select: none;
   --btn-raise: 1rem;
-  clip-path: polygon(var(--btn-raise) 0%, calc(100% - var(--btn-raise)) 0%, 100% 50%, calc(100% - var(--btn-raise)) 100%, var(--btn-raise) 100%, 0 50%);
+  clip-path: polygon(
+    var(--btn-raise) 0%,
+    calc(100% - var(--btn-raise)) 0%,
+    100% 50%,
+    calc(100% - var(--btn-raise)) 100%,
+    var(--btn-raise) 100%,
+    0 50%
+  );
 }
 
 .Button_Link:hover,
 .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:hover,
 .Button_Link:focus,
 .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:focus {
-  color: @primary_background_color !important;
+  color: @background_color_alt !important;
   text-decoration: none;
 }
 
 .Button_Link span,
 .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button span {
-  color: #fff;
+  color: @font_color_inverse;
   position: relative;
   z-index: 2;
 }
@@ -815,7 +871,7 @@ p.Intro_Text,
 .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:hover span,
 .Button_Link:focus span,
 .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:focus span {
-  color: @primary_background_color;
+  color: @background_color_alt;
 }
 
 .Button_Link:before,
@@ -827,7 +883,7 @@ p.Intro_Text,
   left: 2px;
   height: calc(100% - 4px);
   width: calc(100% - 4px);
-  background: @primary_background_color;
+  background: @background_color_alt;
   position: absolute;
   content: '';
   z-index: 1;
@@ -838,51 +894,51 @@ p.Intro_Text,
 .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:hover:before,
 .Button_Link:focus:before,
 .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:focus:before {
-  background: #fff;
+  background: @background_color_inverse;
 }
 
 .darkBg .Button_Link,
 .darkBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button {
-  background-color: #fff;
-  color: @primary_background_color !important;
+  background-color: @background_color_inverse;
+  color: @font_color_alt !important;
 }
 
 .darkBg .Button_Link:hover,
 .darkBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:hover,
 .darkBg .Button_Link:focus,
 .darkBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:focus {
-  color: #fff !important;
+  color: @font_color_inverse !important;
 }
 
 .darkBg .Button_Link span,
 .darkBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button span {
-  color: @primary_background_color;
+  color: @font_color_alt;
 }
 
 .darkBg .Button_Link:hover span,
 .darkBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:hover span,
 .darkBg .Button_Link:focus span,
 .darkBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:focus span {
-  color: #fff;
+  color: @font_color_inverse;
 }
 
 .darkBg .Button_Link:before,
 .darkBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:before {
-  background: #fff;
+  background: @background_color_inverse;
 }
 
 .darkBg .Button_Link:hover:before,
 .darkBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:hover:before,
 .darkBg .Button_Link:focus:before,
 .darkBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:focus:before {
-  background: @primary_background_color;
+  background: @background_color_alt;
 }
 
-@media (max-width:767px) {
+@media (max-width:@small_viewport) {
 
   .Button_Link,
   .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button {
-    font-size: 15px !important;
+    font-size: 1.5rem !important;
     padding: 6px 41px !important;
     margin-top: 21px;
     margin-bottom: 0;
@@ -899,7 +955,7 @@ p.Intro_Text,
 
 .skipLink .visually-hidden-focusable.Button_Link {
   position: fixed !important;
-  top: 140px;
+  top: 14.0rem;
   left: 60px;
   z-index: 9999;
 }
@@ -909,16 +965,16 @@ p.Intro_Text,
 /** Header start **/
 
 .col-megamenu ul li {
-  margin-bottom: 20px;
+  margin-bottom: 2.0rem;
 }
 
 .col-megamenu ul li a {
   text-decoration: none;
-  font-family: 'Roboto_Md';
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 20px;
-  color: #000;
+  font-family: @font_family_medium;
+  font-size: 1.7rem;
+  font-weight: @font_weight_medium;
+  line-height: @line_height_base;
+  color: @font_color_base;
 }
 
 .col-megamenu ul li a:hover,
@@ -927,11 +983,11 @@ p.Intro_Text,
 }
 
 .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item a.nav-link {
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 26px;
-  color: #414141;
+  font-family: @font_family_light;
+  font-weight: @font_weight_light;
+  font-size: 2.0rem;
+  line-height: @line_height_base;
+  color: @font_color_base;
   padding-left: 9.5px;
   padding-right: 9.5px;
   padding-top: 4px;
@@ -951,13 +1007,13 @@ header {
   z-index: 99;
 }
 
-@media all and (width >= 1200px) {
+@media all and (width >= @medium_viewport) {
   .UtilityBar {
     margin-top: 19px;
   }
 
   .UtilityBar li {
-    padding: 0 30px;
+    padding: 0 3.0rem;
     position: relative;
     display: inline-block;
   }
@@ -974,20 +1030,20 @@ header {
     position: absolute;
     right: 0;
     top: 0;
-    background: #414141;
+    background: @background_color_tint_3;
   }
 
   .UtilityBar li a {
-    font-size: 15px;
-    line-height: 20px;
-    letter-spacing: 2.25px;
-    color: #414141;
+    font-size: 1.5rem;
+    line-height: @line_height_base;
+    letter-spacing: 0.225rem;
+    color: @font_color_base;
     text-decoration: none;
   }
 
   .UtilityBar li a:hover,
   .UtilityBar li a:focus {
-    color: #990000;
+    color: @iu_red;
     text-decoration: underline;
   }
 
@@ -998,7 +1054,7 @@ header {
     left: 0;
     width: 0;
     height: 4px;
-    background-color: #990000;
+    background-color: @iu_red;
     opacity: 0;
     transition: width 0.3s ease 0s, left 0.3s ease 0s, opacity 300ms;
     z-index: 1001;
@@ -1011,30 +1067,30 @@ header {
   }
 
   .MainMenu {
-    background: #fff;
+    background: @background_color_inverse;
     margin-top: 53px;
     padding: 0;
   }
 
   .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item {
-    padding: 0 5px; /* changed from 0 20px */
+    padding: 0 5px; /* changed from 0 2.0rem */
   } /* stamats nav test */
 
   .col-megamenu ul li p {
-    font-family: 'Roboto_Lt';
-    font-size: 17px;
-    font-weight: 300;
-    line-height: 20px;
-    color: #000;
+    font-family: @font_family_light;
+    font-size: 1.7rem;
+    font-weight: @font_weight_light;
+    line-height: @line_height_base;
+    color: @font_color_base;
     margin: 0;
   }
 
   .col-megamenu ul li a span {
-    font-family: 'Roboto_Lt';
-    font-size: 17px;
-    font-weight: 300;
-    line-height: 20px;
-    color: #000;
+    font-family: @font_family_light;
+    font-size: 1.7rem;
+    font-weight: @font_weight_light;
+    line-height: @line_height_base;
+    color: @font_color_base;
   }
 
   .col-megamenu ul li a svg {
@@ -1042,7 +1098,7 @@ header {
   }
 
   .CTSI_logo {
-    margin-left: -30px;
+    margin-left: -3.0rem;
   }
 
   .navbar .has-megamenu {
@@ -1057,10 +1113,10 @@ header {
     left: 0;
     top: 100%;
     width: 100%;
-    margin-top: -30px;
-    padding: 40px 0;
+    margin-top: -3.0rem;
+    padding: 4.0rem 0;
     border: none;
-    border-bottom: #000 1px solid;
+    border-bottom: @border_color_base 1px solid;
     border-radius: 0;
   }
 
@@ -1077,24 +1133,24 @@ header {
 
   .megamenu_Details_Title {
     position: relative;
-    font-family: 'Roboto_Md';
-    font-weight: 500;
-    font-size: 26px;
-    line-height: 34px;
-    color: #000000;
-    margin-bottom: 18px;
+    font-family: @font_family_medium;
+    font-weight: @font_weight_medium;
+    font-size: 2.6rem;
+    line-height: @line_height_base;
+    color: @font_color_base;
+    margin-bottom: 1.8rem;
     text-decoration: none;
   }
 
   .megamenu_Details_Title:hover,
   .megamenu_Details_Title:focus {
     text-decoration: underline;
-    color: #000000;
+    color: @font_color_base;
   }
 
   .megamenu_Details_Title svg {
-    width: 24px;
-    height: 24px;
+    width: 2.4rem;
+    height: 2.4rem;
   }
 
   .megamenu_Details {
@@ -1106,7 +1162,7 @@ header {
     width: 1px;
     height: 100%;
     display: inline-block;
-    background: #00A5DB;
+    background: @ri_blue;
     right: 50px;
     top: 0;
     position: absolute;
@@ -1117,7 +1173,7 @@ header {
     width: 100%;
     height: 4px;
     display: inline-block;
-    background: #990000;
+    background: @iu_red;
     position: absolute;
     left: 0;
     bottom: -4px;
@@ -1131,11 +1187,11 @@ header {
   }
 
   .megamenu_Details_Desc {
-    font-family: 'Roboto_Lt';
-    font-size: 17px;
-    font-weight: 300;
-    line-height: 28px;
-    color: #000000;
+    font-family: @font_family_light;
+    font-size: 1.7rem;
+    font-weight: @font_weight_light;
+    line-height: @line_height_base;
+    color: @font_color_base;
     margin: 0;
   }
 
@@ -1146,16 +1202,16 @@ header {
   .closeNavButton:before {
     content: 'Close';
     text-transform: uppercase;
-    font-size: 11px;
-    line-height: 28px;
+    font-size: 1.1rem;
+    line-height: @line_height_expanded;
     position: absolute;
     left: -4px;
-    top: -24px;
-    color: #000;
+    top: -2.4rem;
+    color: @font_color_base;
   }
 
   .navbar .megamenu .row.g-0 .col-lg-4 {
-    padding-right: 40px;
+    padding-right: 4.0rem;
   }
 
   .UtilityBar_Wrapper.container {
@@ -1168,9 +1224,9 @@ header {
     top: 19px;
     max-width: 100%;
     width: 814px;
-    height: 36px;
-    background: #fff;
-    border: #414141 1px solid;
+    height: 3.6rem;
+    background: @background_color_inverse;
+    border: @border_color_tint_3 1px solid;
     overflow: hidden;
   }
 
@@ -1181,7 +1237,7 @@ header {
   }
 
   .UtilityBar_Wrapper .desktop-search-box .gsib_a {
-    padding: 0 20px;
+    padding: 0 2.0rem;
   }
 
   .UtilityBar_Wrapper .desktop-search-box form,
@@ -1190,7 +1246,7 @@ header {
   }
 
   .UtilityBar_Wrapper .gsc-search-button-v2 {
-    background: #fff !important;
+    background: @background_color_inverse !important;
     padding: 10px;
     border: none;
     margin: 0;
@@ -1213,20 +1269,20 @@ header {
   }
 
   .UtilityBar_Wrapper input.gsc-input {
-    font-family: 'Roboto_Lt';
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 18px;
-    color: #000;
+    font-family: @font_family_light;
+    font-weight: @font_weight_light;
+    font-size: 1.8rem;
+    line-height: @line_height_base;
+    color: @font_color_base;
     background-image: none !important;
   }
 
   .UtilityBar_Wrapper input.gsc-input::placeholder {
-    font-family: 'Roboto_Lt';
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 18px;
-    color: #000;
+    font-family                     : @font_family_light;
+    font-weight                     : @font_weight_light;
+    font-size                       : 1.8rem;
+    line-height                     : @line_height_base;
+    color                           : @font_color_base;
   }
 
   .gstl_50.gssb_c {
@@ -1235,7 +1291,7 @@ header {
   }
 
   .search-box-opener img {
-    margin-left: 20px;
+    margin-left: 2.0rem;
     display: none;
   }
 
@@ -1265,12 +1321,12 @@ header {
   .UtilityBar_Wrapper .desktop-search-box input[type="text"] {
     padding: 0;
     border: none;
-    font-family: @primary_font_family;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 20px;
-    letter-spacing: 2.25px;
-    color: #000;
+    font-family: @font_family_base;
+    font-weight: @font_weight_base;
+    font-size: 1.5rem;
+    line-height: @line_height_base;
+    letter-spacing: 0.225rem;
+    color: @font_color_base;
     height: 100%;
     width: 100%;
   }
@@ -1280,12 +1336,12 @@ header {
   }
 
   .UtilityBar_Wrapper .desktop-search-box input[type="text"]::placeholder {
-    font-family: @primary_font_family;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 20px;
-    letter-spacing: 2.25px;
-    color: #000;
+    font-family: @font_family_base;
+    font-weight: @font_weight_base;
+    font-size: 1.5rem;
+    line-height: @line_height_base;
+    letter-spacing: 0.225rem;
+    color: @font_color_base;
   }
 
   .UtilityBar_Wrapper .desktop-search-box input[type="submit"] {
@@ -1301,7 +1357,7 @@ header {
 
 }
 
-@media all and (width >= 1200px) and (width < 1280px) {
+@media all and (width >= @medium_viewport) and (width < @large_viewport) {
   .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item {
     padding: 0 5px;
   }
@@ -1311,11 +1367,11 @@ header {
   }
 
   .navbar .megamenu .row.g-0 .col-lg-4.megamenu_Details {
-    padding-right: 40px;
+    padding-right: 4.0rem;
   }
 
   .megamenu_Details:after {
-    right: 20px;
+    right: 2.0rem;
   }
 
   .UtilityBar_Wrapper .desktop-search-box {
@@ -1323,15 +1379,15 @@ header {
     right: 0;
     top: 19px;
     max-width: 100%;
-    width: 636px;
+    width: 63.6rem;
   }
 }
 
 /*
-@media (min-width:992px) and (max-width:1200px) {
+@media (min-width:@small_viewport) and (max-width:@medium_viewport) {
   .CTSI_logo img {
     max-width: 250px;
-    margin-bottom: 20px;
+    margin-bottom: 2.0rem;
   }
 
   .navbar .megamenu {
@@ -1340,7 +1396,7 @@ header {
 }
 */
 
-@media all and (width < 1200px) {
+@media all and (width < @medium_viewport) {
 
   .mobile_menu_wrapper .navbar {
     position: unset;
@@ -1351,15 +1407,15 @@ header {
     top: 100%;
     left: 0px;
     width: 100%;
-    background: #FFC731;
-    padding: 36px 7%;
+    background: @background_color_highlight;
+    padding: 3.6rem 7%;
     min-height: calc(100vh - 109px);
     z-index: 2;
   }
 
 
   .navbar-toggler {
-    background: #FFC731;
+    background: @background_color_highlight;
     position: absolute;
     right: 0;
     top: 0;
@@ -1384,17 +1440,17 @@ header {
   .navbar-toggler .navbar-toggler-icon:before {
     content: 'Close';
     text-transform: uppercase;
-    font-size: 11px;
-    line-height: 28px;
+    font-size: 1.1rem;
+    line-height: @line_height_base;
     position: absolute;
     left: 0;
-    top: -24px;
+    top: -2.4rem;
   }
 
   .navbar-toggler.collapsed .navbar-toggler-icon {
     background-image: url(/wp-content/themes/ctsi/assets/images/mobile-search-menu.svg);
     width: 47px;
-    height: 36px;
+    height: 3.6rem;
   }
 
   .navbar-toggler.collapsed .navbar-toggler-icon:before {
@@ -1416,7 +1472,7 @@ header {
     height: 18px;
     background-size: contain;
     position: absolute;
-    right: 12px;
+    right: 1.2rem;
     top: 13px;
     transition: transform .2s ease-in-out;
   }
@@ -1428,7 +1484,7 @@ header {
   .navbar-nav .dropdown-menu {
     background: transparent;
     border: none;
-    padding: 8px 36px 40px;
+    padding: 8px 3.6rem 4.0rem;
     margin: 0;
   }
 
@@ -1437,50 +1493,50 @@ header {
   }
 
   .mobile_menu_wrapper .navbar-collapse .navbar-nav .nav-item {
-    background-color: #fff;
-    margin-bottom: 20px;
+    background-color: @background_color_inverse;
+    margin-bottom: 2.0rem;
   }
 
   .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item a.nav-link {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 2.0rem;
+    padding-right: 2.0rem;
     padding-top: 9px;
     padding-bottom: 10px;
   }
 
   .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item a.nav-link {
-    font-size: 22px;
-    line-height: 29px;
-    color: #000;
+    font-size: 2.2rem;
+    line-height: @line_height_base;
+    color: @font_color_base;
   }
 
   .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item a.nav-link:hover,
   .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item a.nav-link:focus {
-    color: #000;
+    color: @font_color_base;
   }
 
   .col-megamenu ul li a {
-    line-height: 22px;
+    line-height: @line_height_base;
   }
 
   .UtilityBar_mobile {
-    margin: 64px 0 0;
+    margin: 6.4rem 0 0;
     padding: 0;
     text-align: center;
   }
 
 
   .UtilityBar_mobile li {
-    padding: 0 35px;
+    padding: 0 3.5rem;
     display: inline-block;
     position: relative;
   }
 
   .UtilityBar_mobile li a {
-    font-size: 17px;
-    line-height: 23px;
-    letter-spacing: 2.25px;
-    color: #000;
+    font-size: 1.7rem;
+    line-height: @line_height_base;
+    letter-spacing: 0.225rem;
+    color: @font_color_base;
     text-decoration: none;
   }
 
@@ -1492,14 +1548,14 @@ header {
     position: absolute;
     right: 0;
     top: 0;
-    background: #414141;
+    background: @background_color_tint_3;
   }
 
   .searchBar_Wrapper_Mobile {
     width: 100%;
-    height: 48px;
+    height: 4.8rem;
     background: none;
-    border: #000 1px solid;
+    border: @border_color_base 1px solid;
     border-radius: 0;
     overflow: hidden;
   }
@@ -1511,7 +1567,7 @@ header {
   }
 
   .searchBar_Wrapper_Mobile .gsib_a {
-    padding: 0 20px;
+    padding: 0 2.0rem;
   }
 
   .searchBar_Wrapper_Mobile form,
@@ -1544,19 +1600,19 @@ header {
   }
 
   .searchBar_Wrapper_Mobile input.gsc-input {
-    color: #000;
-    font-family: 'Roboto_Lt';
-    font-size: 22px;
-    line-height: 22px;
+    color: @font_color_base;
+    font-family: @font_family_light;
+    font-size: 2.2rem;
+    line-height: @line_height_base;
     background-image: none !important;
     background-color: transparent !important;
   }
 
   .searchBar_Wrapper_Mobile input.gsc-input::placeholder {
-    color: #000;
-    font-family: 'Roboto_Lt';
-    font-size: 22px;
-    line-height: 22px;
+    color: @font_color_base;
+    font-family: @font_family_light;
+    font-size: 2.2rem;
+    line-height: @line_height_base;
   }
 
   .gstl_51.gssb_c {
@@ -1571,7 +1627,7 @@ header {
     width: 100%;
     margin: 0;
     height: 100%;
-    padding-left: 20px;
+    padding-left: 2.0rem;
   }
 
   .searchBar_Wrapper_Mobile .searchandfilter ul li:not(:last-child) {
@@ -1588,11 +1644,11 @@ header {
   .searchBar_Wrapper_Mobile input[type="text"] {
     padding: 0;
     border: none;
-    font-family: 'Roboto_Lt';
-    font-weight: 300;
-    font-size: 22px;
-    line-height: 29px;
-    color: #000;
+    font-family: @font_family_light;
+    font-weight: @font_weight_light;
+    font-size: 2.2rem;
+    line-height: @line_height_base;
+    color: @font_color_base;
     height: 100%;
     width: 100%;
     background: transparent;
@@ -1603,11 +1659,11 @@ header {
   }
 
   .searchBar_Wrapper_Mobile input[type="text"]::placeholder {
-    font-family: 'Roboto_Lt';
-    font-weight: 300;
-    font-size: 22px;
-    line-height: 29px;
-    color: #000;
+    font-family: @font_family_light;
+    font-weight: @font_weight_light;
+    font-size: 2.2rem;
+    line-height: @line_height_base;
+    color: @font_color_base;
   }
 
   .searchBar_Wrapper_Mobile input[type="submit"] {
@@ -1633,12 +1689,12 @@ header {
   height: 100%;
   border-bottom: none;
   border-top: none;
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
-  font-size: 14px;
+  font-family: @font_family_light;
+  font-weight: @font_weight_light;
+  font-size: 1.4rem;
   padding: 0 5px;
-  background: #FFFFFF;
-  color: #000;
+  background: @background_color_base;
+  color: @font_color_base;
 }
 
 .desktop-search-box .searchandfilter ul select:focus-visible {
@@ -1671,12 +1727,12 @@ header {
   height: 100%;
   border-bottom: none;
   border-top: none;
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
+  font-family: @font_family_light;
+  font-weight: @font_weight_light;
   font-size: 16px;
   padding: 0 15px 0 5px;
   background: transparent;
-  color: #000;
+  color: @font_color_base;
 }
 
 .searchBar_Wrapper_Mobile .searchandfilter ul select:focus-visible {
@@ -1690,11 +1746,11 @@ header {
 .searchBar_Wrapper_Mobile .searchandfilter .form-reset-class {
   position: absolute;
   right: 60px;
-  top: 12px;
+  top: 1.2rem;
   background: url(/wp-content/themes/ctsi/assets/images/plus.svg);
   transform: rotate(45deg);
-  width: 20px;
-  height: 20px;
+  width: 2.0rem;
+  height: 2.0rem;
   background-size: contain;
   background-repeat: no-repeat;
   border: none;
@@ -1705,7 +1761,7 @@ header {
   transition: unset;
 }
 
-@media (max-width:370px) {
+@media (max-width:@tiny_viewport) {
   .CTSI_logo img {
     max-width: 200px;
   }
@@ -1716,7 +1772,7 @@ header {
 /** Footer start **/
 
 .footer {
-  background: #F4F6F6;
+  background: @background_color_tint_1;
   padding-bottom: 62px;
 }
 
@@ -1725,11 +1781,11 @@ header {
   height: 52px;
   display: flex;
   border-radius: 50%;
-  color: #fff;
+  color: @font_color_base;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 2.4rem;
 }
 
 .socialIcon_Wrapper ul li a img {
@@ -1738,31 +1794,31 @@ header {
 }
 
 .socialIcon_Wrapper ul li a.social_Gold {
-  background: #8E6F3E;
+  background: @background_color_social;
 }
 
 .socialIcon_Wrapper ul li a.social_Gold:hover,
 .socialIcon_Wrapper ul li a.social_Gold:focus {
-  background: @primary_background_color;
+  background: @background_color_alt;
 }
 
 .socialIcon_Wrapper ul li a.social_Blue {
-  background: @primary_background_color;
+  background: @background_color_alt;
 }
 
 .socialIcon_Wrapper ul li a.social_Blue:hover,
 .socialIcon_Wrapper ul li a.social_Blue:focus {
-  background: #8E6F3E;
+  background: @background_color_social;
 }
 
 .ResourceMenuTitle,
 .ResourceMenuTitle span {
-  font-family: @primary_font_family;
-  font-weight: 700;
-  font-size: 17px;
-  line-height: 22px;
+  font-family: @font_family_base;
+  font-weight: @font_weight_bold;
+  font-size: 1.7rem;
+  line-height: @line_height_base;
   letter-spacing: 1.19px;
-  color: #000;
+  color: @font_color_base;
 }
 
 .ResourceMenuTitle {
@@ -1776,12 +1832,12 @@ header {
 }
 
 .ResourceMenu ul li a {
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
-  font-size: 17px;
-  line-height: 22px;
+  font-family: @font_family_light;
+  font-weight: @font_weight_light;
+  font-size: 1.7rem;
+  line-height: @line_height_base;
   letter-spacing: 1.19px;
-  color: #000;
+  color: @font_color_base;
   text-decoration: none;
 }
 
@@ -1795,17 +1851,17 @@ header {
 }
 
 .copyright_Wrapper p {
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 22px;
-  color: #000;
+  font-family: @font_family_light;
+  font-weight: @font_weight_light;
+  font-size: 1.5rem;
+  line-height: @line_height_base;
+  color: @font_color_base;
   display: inline-block;
   width: auto;
 }
 
 .copyright_Wrapper p a {
-  color: #000;
+  color: @font_color_base;
   text-decoration: none;
 }
 
@@ -1821,7 +1877,7 @@ header {
 
 .copyright_Wrapper ul li {
   display: inline-block;
-  padding-left: 30px;
+  padding-left: 3.0rem;
   width: auto;
   position: relative;
 }
@@ -1832,17 +1888,17 @@ header {
   width: 1px;
   height: 18px;
   display: inline-block;
-  background-color: #000;
+  background-color: @background_color_inverse;
   left: 15.5px;
   top: 3px;
 }
 
 .copyright_Wrapper ul li a {
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 22px;
-  color: #000;
+  font-family: @font_family_light;
+  font-weight: @font_weight_light;
+  font-size: 1.5rem;
+  line-height: @line_height_base;
+  color: @font_color_base;
   text-decoration: none;
 }
 
@@ -1863,7 +1919,7 @@ header {
   filter: grayscale(0);
 }
 
-@media (width >= 992px) {
+@media (width >= @small_viewport) {
 
   .FooterMenu_Wrapper {
     padding-top: 98px;
@@ -1918,35 +1974,35 @@ header {
   }
 }
 
-@media (min-width:1500px) and (max-width:1900px) {
+@media (min-width:@large_viewport) {
   .ResourceMenu {
     padding-right: 60px;
   }
 }
 
-@media all and (width >= 992px) and (width < 1279px) {
+@media all and (width >= @small_viewport) and (width < @large_viewport) {
   .ResourceMenu {
     padding-left: 15px;
     padding-right: 15px;
   }
 }
 
-@media all and (min-width:768px) and (max-width:991px) {
+@media all and (min-width:@small_viewport) and (max-width:@medium_viewport) {
   .clientLogo.text-center {
-    margin: 0 0 20px;
+    margin: 0 0 2.0rem;
     display: inline-block;
-    padding: 0 0 20px;
+    padding: 0 0 2.0rem;
   }
 }
 
-@media (width < 992px) {
+@media (width < @small_viewport) {
 
   .FooterMenu_Wrapper,
   .ResourceMenu_Wrapper,
   .socialIcon_Wrapper,
   .clientLogo_Wrapper,
   .copyright_Wrapper {
-    padding-top: 36px;
+    padding-top: 3.6rem;
   }
 
   .FooterLogo {
@@ -1959,24 +2015,24 @@ header {
   }
 
   .ResourceMenu.accordion-item {
-    margin-bottom: 20px;
-    border: #4D4D4D 1px solid !important;
+    margin-bottom: 2.0rem;
+    border: @border_color_tint_3 1px solid !important;
   }
 
   .ResourceMenu.accordion-item .accordion-button {
-    color: #000;
+    color: @font_color_base;
     box-shadow: none;
-    background-color: #fff;
-    font-family: 'Roboto_Lt';
-    font-weight: 300;
-    font-size: 22px;
-    line-height: 29px;
+    background-color: @background_color_inverse;
+    font-family: @font_family_light;
+    font-weight: @font_weight_light;
+    font-size: 2.2rem;
+    line-height: @line_height_base;
     padding: 9.5px 1rem;
   }
 
   .ResourceMenu.accordion-item .accordion-button:not(.collapsed) {
     box-shadow: none;
-    background-color: #fff;
+    background-color: @background_color_inverse;
   }
 
   .accordion-flush .ResourceMenu .accordion-collapse {
@@ -1997,7 +2053,7 @@ header {
   }
 
   .CTSI_Footerlogo img {
-    max-height: 120px;
+    max-height: 12.0rem;
   }
 
   .socialIcon_Wrapper ul {
@@ -2016,11 +2072,11 @@ header {
   }
 
   .ResourceMenu ul li a {
-    font-family: 'Roboto_Md';
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 22px;
-    color: #000;
+    font-family: @font_family_medium;
+    font-size: 1.7rem;
+    font-weight: @font_weight_medium;
+    line-height: @line_height_base;
+    color: @font_color_base;
   }
 
   .copyright_Wrapper p,
@@ -2029,7 +2085,7 @@ header {
   }
 
   .copyright_Wrapper ul {
-    margin: 20px 0 0;
+    margin: 2.0rem 0 0;
   }
 
   .copyright_Wrapper ul li {
@@ -2049,13 +2105,13 @@ header {
   }
 
   footer {
-    background: #F4F6F6 !important;
+    background: @background_color_tint_1 !important;
   }
 }
 
-@media (max-width:767px) {
+@media (max-width:@small_viewport) {
   .clientLogo {
-    margin-bottom: 40px;
+    margin-bottom: 4.0rem;
   }
 }
 
@@ -2066,7 +2122,7 @@ header {
 .interior_Banner {
   position: relative;
   overflow-x: clip;
-  z-index: 1;
+  z-index: -1;
 }
 
 .interior_Banner_Img {
@@ -2079,8 +2135,8 @@ header {
 }
 
 .interior_Banner_Content {
-/*     
-  position: absolute; 
+/*
+  position: absolute;
 */
   left: 0;
   top: 0;
@@ -2094,7 +2150,7 @@ header {
   margin: auto;
 }
 
-@media (min-width:992px) and (max-width:1279px) {
+@media (min-width:@small_viewport) and (max-width:@large_viewport) {
 
   .interior_Banner {
   }
@@ -2104,33 +2160,33 @@ header {
   }
 
   .section_Nav {
-    margin-top: 20px;
+    margin-top: 2.0rem;
   }
 }
 
-@media (max-width:1365px) {
+@media (max-width:@medium_viewport) {
   .interior_Banner h1 {
-    width: 86%;
+    width: 85%;
   }
 }
 
-@media (min-width:1366px) {
+@media (min-width:@medium_viewport) {
   .interior_Banner h1 {
-    width: 1164px;
+    width: 85%;
   }
   .navbar-expand-xl.MainMenu ul.navbar-nav li.nav-item { /* stamats nav testing */
     padding: 0 5px;
   }
 }
 
-@media (min-width:1440px) {
+@media (min-width:@medium_viewport) {
   .interior_Banner h1 {
     width: 88%;
   }
 }
 
-@media (max-width:991px) {
-  
+@media (max-width:@medium_viewport) {
+
   .interior_Banner {
   }
 
@@ -2148,11 +2204,11 @@ header {
 
   .interior_Banner h1 {
     padding-top: 116px;
-    font-size: 30px;
-    line-height: 38px;
+    font-size: 3.0rem;
+    line-height: @line_height_base;
   }
 }
-@media (max-width:480px) {
+@media (max-width:@small_viewport) {
   .interior_Banner {
   }
 }
@@ -2182,9 +2238,9 @@ header {
 }
 
 .home_Banner h2 {
-  font-family: 'Roboto_Bk';
-  font-size: 48px;
-  line-height: 48px;
+  font-family: @font_family_heavy;
+  font-size: 4.8rem;
+  line-height: @line_height_base;
   margin-bottom: 55px;
 }
 
@@ -2193,86 +2249,86 @@ header {
 }
 
 .home_Banner .tagLine {
-  border-top: #000 1px solid;
-  border-bottom: #000 1px solid;
-  background: rgba(255, 255, 255, .85);
+  border-top: @border_color_base 1px solid;
+  border-bottom: @border_color_base 1px solid;
+  background: @background_color_base_translucent;
   margin: 0;
 }
 
 .home_Banner .tagLine span {
   margin: auto;
-  font-family: @primary_font_family;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
-  color: #000;
+  font-family: @font_family_base;
+  font-weight: @font_weight_base;
+  font-size: 1.5rem;
+  line-height: @line_height_base;
+  color: @font_color_base;
   display: flex;
   padding: 7px 0;
   letter-spacing: 3px;
 }
 
 .home_Banner .CTA_wrapper .Button_Link {
-  margin-right: 30px;
+  margin-right: 3.0rem;
   margin-bottom: 0;
 }
 
 .home_Banner .CTA_wrapper .Button_Intro_Text {
-  font-family: @primary_font_family;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 32px;
-  color: #000;
+  font-family: @font_family_base;
+  font-weight: @font_weight_base;
+  font-size: 1.7rem;
+  line-height: @line_height_base;
+  color: @font_color_base;
   margin-top: 73px;
   margin-bottom: 0;
 }
 
-@media (min-width:992px) {
+@media (min-width:@small_viewport) {
   .home_Banner .tagLine span {
     padding-left: 125px;
   }
 }
 
-@media (max-width:1365px) {
+@media (max-width:@medium_viewport) {
 
   .home_Banner h2,
   .home_Banner .CTA_wrapper,
   .home_Banner .tagLine span {
-    width: 86%;
+    width: 85%;
   }
 }
 
-@media (min-width:1366px) {
+@media (min-width:@medium_viewport) {
 
   .home_Banner h2,
   .home_Banner .CTA_wrapper,
   .home_Banner .tagLine span {
-    width: 1164px;
+    width: 85%;
   }
 }
 
-@media (min-width:1440px) {
+@media (min-width:@medium_viewport) {
 
   .home_Banner h2,
   .home_Banner .CTA_wrapper,
   .home_Banner .tagLine span {
-    width: 88%;
+    width: 85%%;
   }
 }
 
-@media (min-width:1500px) {
+@media (min-width:@large_viewport) {
   .home_Banner_Content {
     bottom: 70px;
   }
 }
 
-@media (min-width:1900px) {
+@media (min-width:@extra_large_viewport) {
   .home_Banner_Content {
     bottom: 135px;
   }
 }
 
 
-@media (max-width:991px) {
+@media (max-width:@medium_viewport) {
   .home_Banner_Img {
     height: 547px;
     display: flex;
@@ -2286,12 +2342,12 @@ header {
   }
 
   .home_Banner .CTA_wrapper .Button_Intro_Text {
-    font-family: @primary_font_family;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 32px;
-    color: #000;
-    margin-top: 30px;
+    font-family: @font_family_base;
+    font-weight: @font_weight_base;
+    font-size: 1.7rem;
+    line-height: @line_height_base;
+    color: @font_color_base;
+    margin-top: 3.0rem;
   }
 
   .home_Banner_Content {
@@ -2301,29 +2357,29 @@ header {
 /*
   .home_Banner .CTA_wrapper .Button_Link {
     margin-top: 21px;
-  } 
+  }
 */
 
 }
 
-@media (max-width:767px) {
+@media (max-width:@small_viewport) {
   .home_Banner .CTA_wrapper .Button_Link {
     float: left;
   }
 
   .home_Banner h2 {
-    font-size: 26px;
-    line-height: 28px;
+    font-size: 2.6rem;
+    line-height: @line_height_base;
     padding-right: 28%;
   }
 
   .home_Banner .tagLine span {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 1.3rem;
+    line-height: @line_height_base;
   }
 }
 
-@media (max-width:480px) {
+@media (max-width:@tiny_viewport) {
 
   .home_Banner_Content {
     top: 188px;
@@ -2334,7 +2390,7 @@ header {
   }
 }
 
-@media (min-width:481px) {
+@media (min-width:@tiny_viewport) {
   .banner_hidden_Mobile {
     display: none;
   }
@@ -2345,15 +2401,15 @@ header {
 /** Icon Links Start **/
 
 .iconLinks_Wrapper {
-  margin-bottom: 72px;
+  margin-bottom: 7.2rem;
 }
 
 .iconLinks_Wrapper h2 {
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 26px;
-  color: #414141;
+  font-family: @font_family_light;
+  font-weight: @font_weight_light;
+  font-size: 2.0rem;
+  line-height: @line_height_expanded;
+  color: @font_color_base;
   letter-spacing: 10px;
 }
 
@@ -2398,15 +2454,15 @@ header {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: @primary_background_color;
+  color: @font_color_alt;
 }
 
 .iconLinks_Wrapper ul li a .iconLinkText,
 .iconLinks_Wrapper ul li .icon_no_link .iconLinkText {
-  font-family: @primary_font_family;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
+  font-family: @font_family_base;
+  font-weight: @font_weight_base;
+  font-size: 1.5rem;
+  line-height: @line_height_base;
   letter-spacing: .9px;
 }
 
@@ -2415,21 +2471,21 @@ header {
   text-decoration: underline;
 }
 
-@media (min-width:1280px) {
+@media (min-width:@medium_viewport) {
   .iconLinks_Wrapper ul {
-    gap: 24px;
+    gap: 2.4rem;
   }
 
   .iconLinks_Wrapper ul li {
-    width: calc(16.66% - 24px);
+    width: calc(16.66% - 2.4rem);
   }
 }
 
-@media (max-width:767px) {
+@media (max-width:@small_viewport) {
   .iconLinks_Wrapper ul {
     flex-wrap: unset;
     flex-direction: column;
-    gap: 20px;
+    gap: 2.0rem;
   }
 
   .iconLinks_Wrapper ul li {
@@ -2443,23 +2499,23 @@ header {
 /** Media Showcase Start **/
 
 .mediaShowcase_wrapper {
-  padding: 72px 0;
+  padding: 7.2rem 0;
   flex-direction: row;
-  gap: 72px;
-  margin-bottom: 72px;
+  gap: 7.2rem;
+  margin-bottom: 7.2rem;
   align-items: center;
 }
 
 .mediaShowcase_Img {
-  width: 372px;
+  width: 37.2rem;
   position: relative;
   flex: 1 0 374px;
 }
 
-/* 
+/*
 .mediaShowcase_Img img {
-  border: #00A5DB 1px solid;
-} 
+  border: @ri_blue 1px solid;
+}
 */
 
 .playButton button {
@@ -2521,44 +2577,44 @@ header {
 }
 
 .mediaShowcase_Cont h2 a {
-  color: #000;
+  color: @font_color_base;
   text-decoration: none;
 }
 
 .mediaShowcase_Cont h2 a:hover,
 .mediaShowcase_Cont h2 a:focus {
-  color: #000;
+  color: @font_color_base;
   text-decoration: underline;
 }
 
 main .mediaShowcase_Cont p {
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 32px;
+  font-family: @font_family_light;
+  font-weight: @font_weight_light;
+  font-size: 2.0rem;
+  line-height: @line_height_base;
   margin-bottom: 5px;
 }
 
 main .mediaShowcase_Cont ul:not(.list-unstyled) {
-  padding-left: 65px;
+  padding-left: 6.5rem;
   margin-bottom: 0;
 }
 
 main .mediaShowcase_Cont ul:not(.list-unstyled) li {
   list-style-type: disc;
   padding-left: 0;
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 32px;
+  font-family: @font_family_light;
+  font-weight: @font_weight_light;
+  font-size: 2.0rem;
+  line-height: @line_height_base;
   padding-bottom: 0;
 }
 main .mediaShowcase_Cont ol:not(.list-unstyled) li {
   padding-left: 0;
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 32px;
+  font-family: @font_family_light;
+  font-weight: @font_weight_light;
+  font-size: 2.0rem;
+  line-height: @line_height_base;
   padding-bottom: 0;
 }
 
@@ -2601,8 +2657,8 @@ main .mediaShowcase_Cont .wp-block-buttons .wp-block-button a.wp-block-button__l
 .modalWrapper .btn-close {
   background: url(/wp-content/themes/ctsi/assets/images/plus.svg);
   transform: rotate(45deg);
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
   background-size: contain;
   background-repeat: no-repeat;
   -webkit-filter: invert(100%);
@@ -2624,28 +2680,28 @@ main .mediaShowcase_Cont .wp-block-buttons .wp-block-button a.wp-block-button__l
 }
 
 .mediaShowcase.greyBg {
-  background-color: #F4F6F6;
+  background-color: @background_color_tint_1;
 }
 
 
 .mediaShowcase a.media-showcase-click:hover .Button_Link,
 .mediaShowcase a.media-showcase-click:focus .Button_Link {
-  color: @primary_background_color !important;
+  color: @font_color_alt !important;
   text-decoration: none;
 }
 
 .mediaShowcase a.media-showcase-click:hover .Button_Link span,
 .mediaShowcase a.media-showcase-click:focus .Button_Link span {
-  color: @primary_background_color;
+  color: @font_color_alt;
 }
 
 .mediaShowcase a.media-showcase-click:hover .Button_Link:before,
 .mediaShowcase a.media-showcase-click:focus .Button_Link:before {
-  background: #fff;
+  background: @background_color_inverse;
 }
 
 .patternBg {
-  background-color: @primary_background_color;
+  background-color: @background_color_alt;
 }
 
 .patternBg h2,
@@ -2676,15 +2732,15 @@ main .mediaShowcase_Cont .wp-block-buttons .wp-block-button a.wp-block-button__l
 .ImageBg ul li a,
 .ImageBg ul li a:hover,
 .ImageBg ul li a:focus {
-  color: #fff !important;
+  color: @font_color_inverse !important;
 }
 
 .patternBg .Button_Link,
 .patternBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button,
 .ImageBg .Button_Link,
 .ImageBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button {
-  background-color: #fff;
-  color: @primary_background_color !important;
+  background-color: @background_color_inverse;
+  color: @font_color_alt !important;
 }
 
 .mediaShowcase.patternBg a.media-showcase-click:hover .Button_Link,
@@ -2699,14 +2755,14 @@ main .mediaShowcase_Cont .wp-block-buttons .wp-block-button a.wp-block-button__l
 .patternBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:focus,
 .ImageBg .Button_Link:focus,
 .ImageBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:focus {
-  color: #fff !important;
+  color: @font_color_inverse !important;
 }
 
 .patternBg .Button_Link span,
 .patternBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button span,
 .ImageBg .Button_Link span,
 .ImageBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button span {
-  color: @primary_background_color;
+  color: @font_color_alt;
 }
 
 .mediaShowcase.patternBg a.media-showcase-click:hover .Button_Link span,
@@ -2721,14 +2777,14 @@ main .mediaShowcase_Cont .wp-block-buttons .wp-block-button a.wp-block-button__l
 .patternBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:focus span,
 .ImageBg .Button_Link:focus span,
 .ImageBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:focus span {
-  color: #fff;
+  color: @font_color_inverse;
 }
 
 .patternBg .Button_Link:before,
 .patternBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:before,
 .ImageBg .Button_Link:before,
 .ImageBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:before {
-  background: #fff;
+  background: @background_color_base;
 }
 
 .mediaShowcase.patternBg a.media-showcase-click:hover .Button_Link:before,
@@ -2743,10 +2799,10 @@ main .mediaShowcase_Cont .wp-block-buttons .wp-block-button a.wp-block-button__l
 .patternBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:focus:before,
 .ImageBg .Button_Link:focus:before,
 .ImageBg .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:focus:before {
-  background: @primary_background_color;
+  background: @background_color_alt;
 }
 
-@media (min-width:768px) and (max-width:1279px) {
+@media (min-width:@small_viewport) and (max-width:@large_viewport) {
   .mediaShowcase_Img {
     width: 192px;
     height: 185px;
@@ -2755,11 +2811,11 @@ main .mediaShowcase_Cont .wp-block-buttons .wp-block-button a.wp-block-button__l
   }
 
   .mediaShowcase_Cont {
-    flex: 1 0 calc(100% - 234px);
+    flex: 1 0 calc(100% - 23.4rem);
   }
 
   .mediaShowcase_wrapper {
-    gap: 40px;
+    gap: 4.0rem;
     flex-wrap: unset !important;
   }
 
@@ -2769,21 +2825,21 @@ main .mediaShowcase_Cont .wp-block-buttons .wp-block-button a.wp-block-button__l
   }
 }
 
-@media (max-width:991px) {
+@media (max-width:@medium_viewport) {
 
   main .mediaShowcase_Cont :is(ul, ol):not(.list-unstyled) li,
   main .mediaShowcase_Cont p {
-    font-size: 17px;
-    line-height: 26px;
+    font-size: 1.7rem;
+    line-height: @line_height_base;
   }
 
   .mediaShowcase_Cont h2 {
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 2.4rem;
+    line-height: @line_height_base;
   }
 }
 
-@media (max-width:767px) {
+@media (max-width:@small_viewport) {
 
   .mediaShowcase h2,
   .mediaShowcase h2 a,
@@ -2803,46 +2859,46 @@ main .mediaShowcase_Cont .wp-block-buttons .wp-block-button a.wp-block-button__l
   .mediaShowcase ul li,
   .mediaShowcase ul li a,
   .mediaShowcase ul li a:hover {
-    color: #fff !important;
+    color: @font_color_inverse !important;
   }
 
   .mediaShowcase .Button_Link,
   .mediaShowcase .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button {
-    background-color: #fff;
-    color: @primary_background_color !important;
+    background-color: @background_color_inverse;
+    color: @font_color_alt !important;
   }
 
   .mediaShowcase a.media-showcase-click:hover .Button_Link,
   .mediaShowcase .Button_Link:hover,
   .mediaShowcase .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:hover {
-    color: #fff !important;
+    color: @font_color_inverse !important;
   }
 
   .mediaShowcase .Button_Link span,
   .mediaShowcase .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button span {
-    color: @primary_background_color;
+    color: @font_color_alt;
   }
 
   .mediaShowcase a.media-showcase-click:hover .Button_Link span,
   .mediaShowcase .Button_Link:hover span,
   .mediaShowcase .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:hover span {
-    color: #fff;
+    color: @font_color_inverse;
   }
 
   .mediaShowcase .Button_Link:before,
   .mediaShowcase .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:before {
-    background: #fff;
+    background: @font_color_inverse;
   }
 
   .mediaShowcase a.media-showcase-click:hover .Button_Link:before,
   .mediaShowcase .Button_Link:hover:before,
   .mediaShowcase .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button:hover:before {
-    background: @primary_background_color;
+    background: @background_color_alt;
   }
 
   .mediaShowcase {
     background-image: none !important;
-    background-color: @primary_background_color !important;
+    background-color: @background_color_alt !important;
   }
 
   .mediaShowcase_wrapper {
@@ -2863,7 +2919,7 @@ main .mediaShowcase_Cont .wp-block-buttons .wp-block-button a.wp-block-button__l
 
   .modalWrapper .btn-close {
     position: absolute;
-    top: -20px;
+    top: -2.0rem;
     right: 5%;
   }
 
@@ -2903,7 +2959,7 @@ a.media-showcase-click:focus h4 {
 /** Location Block start **/
 
 .locationBlock {
-  margin-bottom: 72px;
+  margin-bottom: 7.2rem;
 }
 
 .locationBlock h2:before {
@@ -2918,7 +2974,7 @@ a.media-showcase-click:focus h4 {
   column-count: 2;
   break-inside: avoid;
   margin-bottom: 0 !important;
-  padding-left: 24px !important;
+  padding-left: 2.4rem !important;
 }
 
 main .locationBlock_Cont ul:not(.list-unstyled) li {
@@ -2927,32 +2983,32 @@ main .locationBlock_Cont ul:not(.list-unstyled) li {
   break-inside: avoid;
   width: auto;
   margin-right: 55px;
-  padding-left: 30px;
+  padding-left: 3.0rem;
 }
 
 main .locationBlock_Cont ul:not(.list-unstyled) li span,
 main .locationBlock_Cont ul:not(.list-unstyled) li p {
-  font-family: @primary_font_family;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 22px;
-  color: #000;
+  font-family: @font_family_base;
+  font-weight: @font_weight_base;
+  font-size: 1.5rem;
+  line-height: @line_height_base;
+  color: @font_color_base;
   display: block;
   margin-bottom: 0;
 }
 
 main .locationBlock_Cont ul:not(.list-unstyled) li span strong,
 main .locationBlock_Cont ul:not(.list-unstyled) li p strong {
-  font-family: @primary_font_family;
-  font-weight: 700;
+  font-family: @font_family_base;
+  font-weight: @font_weight_bold;
 }
 
 main .locationBlock_Cont ul:not(.list-unstyled) li a {
-  font-family: @primary_font_family;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 24px;
-  color: #000;
+  font-family: @font_family_base;
+  font-weight: @font_weight_base;
+  font-size: 1.5rem;
+  line-height: @line_height_base;
+  color: @font_color_base;
   text-decoration: underline;
   display: block;
 }
@@ -2964,7 +3020,7 @@ main .locationBlock_Cont ul:not(.list-unstyled) li a:last-child {
 main .locationBlock_Cont ul:not(.list-unstyled) li a:hover,
 main .locationBlock_Cont ul:not(.list-unstyled) li a:focus {
   text-decoration: none;
-  color: #990000;
+  color: @iu_red;
 }
 
 main .locationBlock_Cont ul:not(.list-unstyled) li:before {
@@ -2997,19 +3053,19 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   background-size: contain;
 }
 
-@media (max-width:1279px) {
+@media (max-width:@medium_viewport) {
   main .locationBlock_Cont ul:not(.list-unstyled) li {
-    margin-right: 30px;
+    margin-right: 3.0rem;
   }
 }
 
-@media (max-width:991px) {
+@media (max-width:@small_viewport) {
   .locationBlock_Map {
-    margin-bottom: 40px;
+    margin-bottom: 4.0rem;
   }
 }
 
-@media (max-width:700px) {
+@media (max-width:@small_viewport) {
 
   main .locationBlock_Cont ul:not(.list-unstyled) li {
     margin-right: 0;
@@ -3019,14 +3075,14 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 
   main .locationBlock_Cont ul:not(.list-unstyled) {
     column-count: 1;
-    margin-left: 40px;
+    margin-left: 4.0rem;
     padding-left: 0;
   }
 }
 
-@media (max-width:480px) {
+@media (max-width:@tiny_viewport) {
   .locationBlock h2 {
-    font-size: 24px;
+    font-size: 2.4rem;
     margin-bottom: 0;
   }
 }
@@ -3036,14 +3092,14 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 /** Cards start **/
 
 .cardsWrapper {
-  margin-bottom: 72px;
-  padding: 72px 0;
+  margin-bottom: 7.2rem;
+  padding: 7.2rem 0;
 }
 
 .cardsWrapper h2 {
-  line-height: 50px;
-  margin-bottom: 24px;
-  color: @primary_background_color;
+  line-height: @line_height_base;
+  margin-bottom: 2.4rem;
+  color: @font_color_alt;
 }
 
 .cardsWrapper h2:before {
@@ -3052,34 +3108,34 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 
 .cardsWrapper ul.cardItems {
   display: flex;
-  gap: 24px;
+  gap: 2.4rem;
   flex-wrap: wrap;
   margin-bottom: 0;
 }
 
 .cardsWrapper ul.cardItems li {
-  background: #F4F6F6;
+  background: @background_color_tint_1;
   min-height: 160px;
-  width: calc(20% - 20px);
+  width: calc(20% - 2.0rem);
 }
 
 .cardsWrapper ul.cardItems li.card-white {
-  background-color: #fff;
+  background-color: @background_color_base;
 }
 
 .cardsWrapper .cardTitle {
-  font-family: @primary_font_family;
-  font-weight: 700;
-  font-size: 17px;
-  line-height: 20px;
-  color: #000;
+  font-family: @font_family_base;
+  font-weight: @font_weight_bold;
+  font-size: 1.7rem;
+  line-height: @line_height_base;
+  color: @font_color_base;
   text-decoration: none;
 }
 
 .cardsWrapper ul.cardItems li>a {
   padding: 33px 17px 5px;
   text-decoration: none;
-  color: #000;
+  color: @font_color_base;
   display: inline-block;
   height: 100%;
 }
@@ -3089,7 +3145,7 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 }
 
 .cardsWrapper ul.cardItems li.doubleWide {
-  width: calc(40% - 24px);
+  width: calc(40% - 2.4rem);
 }
 
 .cardsWrapper ul.cardItems li.doubleWide>a {
@@ -3115,39 +3171,39 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 }
 
 .cardsWrapper.greyBg {
-  background-color: #F4F6F6;
+  background-color: @background_color_tint_1;
 }
 
 .cardsWrapper.goldBg ul.cardItems li,
 .cardsWrapper.blueBg ul.cardItems li {
-  background: #fff;
+  background: @background_color_base;
 }
 
 .cardsWrapper ul.cardItems li.card-grey {
-  background: #F4F6F6 !important;
+  background: @background_color_tint_1 !important;
 }
 
 .cardsWrapper.greyBg ul.cardItems li {
-  background: #fff !important;
+  background: @background_color_base !important;
 }
 
 .cardsWrapper.goldBg {
-  background: #FFC731;
+  background: @background_color_highlight;
 }
 
 .cardsWrapper.blueBg {
-  background: @primary_background_color;
+  background: @background_color_alt;
 }
 
 .cardsWrapper.blueBg h2 {
-  color: #fff;
+  color: @font_color_inverse;
 }
 
 .cardDesc {
-  font-family: @primary_font_family;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
+  font-family: @font_family_base;
+  font-weight: @font_weight_base;
+  font-size: 1.5rem;
+  line-height: @line_height_base;
 }
 
 .cardDet_Wrapper .Button_Link {
@@ -3163,26 +3219,26 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 }
 
 .cardsWrapper ul.cardItems li>a:hover .Button_Link {
-  color: @primary_background_color !important;
+  color: @font_color_alt !important;
   text-decoration: none;
 }
 
 .cardsWrapper ul.cardItems li>a:hover .Button_Link span {
-  color: #fff;
+  color: @font_color_inverse;
   position: relative;
   z-index: 2;
 }
 
 .cardsWrapper ul.cardItems li>a:hover .Button_Link span {
-  color: @primary_background_color;
+  color: @font_color_alt;
 }
 
 .cardsWrapper ul.cardItems li>a:hover .Button_Link:before {
-  background: #fff;
+  background: @background_color_base;
 }
 
-/* 
-@media (min-width:992px) {
+/*
+@media (min-width:@medium_viewport) {
   .cardsWrapper ul.cardItems li.doubleWide .row {
     height: 100%;
   }
@@ -3191,16 +3247,16 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
     align-items: center;
     display: flex;
   }
-} 
+}
 */
 
-@media (max-width:1440px) {
+@media (max-width:@medium_viewport) {
   .cardImage_Wrapper .cardImage img {
     max-height: 160px;
   }
 }
 
-@media (min-width:992px) and (max-width:1279px) {
+@media (min-width:@medium_viewport) and (max-width:@large_viewport) {
 
   .cardsWrapper ul.cardItems li>a,
   .cardsWrapper ul.cardItems li.doubleWide .cardDet_Wrapper,
@@ -3209,7 +3265,7 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   }
 
   .cardsWrapper .cardTitle {
-    font-size: 15px;
+    font-size: 1.5rem;
   }
 
   .cardsWrapper ul.cardItems {
@@ -3225,12 +3281,12 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   }
 
   .cardDesc {
-    font-size: 14px;
-    line-height: 14px;
+    font-size: 1.4rem;
+    line-height: @line_height_base;
   }
 }
 
-@media (max-width:991px) {
+@media (max-width:@medium_viewport) {
   .cardsWrapper {
     background-image: none !important;
   }
@@ -3245,12 +3301,12 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   }
 
   .cardsWrapper ul.cardItems li {
-    margin-bottom: 12px;
+    margin-bottom: 1.2rem;
     min-height: 109px;
   }
 }
 
-@media (max-width:991px) {
+@media (max-width:@medium_viewport) {
   .cardsWrapper ul.cardItems li.doubleWide .cardDet_Wrapper {
     padding: 16px 22px 5px;
   }
@@ -3262,19 +3318,19 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   }
 }
 
-@media (max-width:480px) {
+@media (max-width:@tiny_viewport) {
   .cardImage_Wrapper .cardImage img {
     max-height: 137px;
   }
 }
 
-@media (min-width:992px) {
+@media (min-width:@medium_viewport) {
   .section_with_vector .container {
     position: relative;
   }
 
   .card_wrapper_icon_1 {
-    width: 272px;
+    width: 27.2rem;
     height: 261px;
     background-size: contain;
     position: absolute;
@@ -3294,7 +3350,7 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   }
 
   .section_with_vector {
-    padding-top: 130px;
+    padding-top: 13.0rem;
   }
 
   .section_with_vector h2 {
@@ -3310,7 +3366,7 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   }
 }
 
-@media (min-width:992px) and (max-width:1279px) {
+@media (min-width:@small_viewport) and (max-width:@large_viewport) {
   .card_wrapper_icon_1 {
     width: 250px;
     height: 250px;
@@ -3318,7 +3374,7 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   }
 }
 
-@media (max-width:991px) {
+@media (max-width:@medium_viewport) {
 
   .card_wrapper_icon_1,
   .card_wrapper_icon_2 {
@@ -3331,10 +3387,10 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 /** Image Card Carousel start **/
 
 .ImageCard_Carousel {
-  margin-bottom: 72px;
+  margin-bottom: 7.2rem;
 }
 .ImageCard_Title {
- margin-bottom: 15px;  
+ margin-bottom: 15px;
 }
 
 .ImageCard_Carousel .item {
@@ -3343,19 +3399,19 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 
 .ImageCard_Carousel .item a {
   text-decoration: none;
-  padding: 12px;
+  padding: 1.2rem;
   display: block;
 }
 
 .no_link_carousel_item {
   text-decoration: none;
-  padding: 12px;
+  padding: 1.2rem;
   display: block;
 }
 
 .ImageCard_Carousel .item a:hover,
 .ImageCard_Carousel .item a:focus {
-  background-color: #F4F6F6;
+  background-color: @background_color_tint_1;
 }
 
 .ImageCard_Carousel .item a:hover .ImageCard_Img_Title,
@@ -3373,16 +3429,16 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 }
 
 .ImageCard_Img img {
-  border: #00A5DB 1px solid;
+  border: @ri_blue 1px solid;
 }
 
 .ImageCard_Img_Title {
   margin-bottom: 0;
-  font-family: 'Roboto_Md';
-  font-weight: 500;
-  color: @primary_background_color;
-  font-size: 17px;
-  line-height: 22px;
+  font-family: @font_family_medium;
+  font-weight: @font_weight_medium;
+  color: @font_color_alt;
+  font-size: 1.7rem;
+  line-height: @line_height_base;
   text-overflow: ellipsis;
   word-wrap: break-word;
   overflow: hidden;
@@ -3394,14 +3450,14 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 
 .ImageCard_Img_Desc {
   margin-bottom: 0;
-  padding: 24px 0 0;
+  padding: 2.4rem 0 0;
   position: relative;
 }
 
 .ImageCard_Img_Desc:before {
   width: 100%;
   height: 2px;
-  background-color: #00A5DB;
+  background-color: @ri_blue;
   display: inline-block;
   content: '';
   position: absolute;
@@ -3419,7 +3475,7 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   position: absolute;
   font-size: 0;
   width: 44px;
-  height: 30px;
+  height: 3.0rem;
   background: none;
   border: none;
 }
@@ -3445,7 +3501,7 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   background-image: url(/wp-content/themes/ctsi/assets/images/arrow_black.png);
 }
 
-@media (min-width:992px) {
+@media (min-width:@medium_viewport) {
 
   .ImageCard_Carousel .owl-item:not(.active) .ImageCard_Img_Title,
   .ImageCard_Carousel .owl-item:not(.active) .ImageCard_Img_Desc {
@@ -3460,14 +3516,14 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   }
 }
 
-@media (max-width:1023px) {
+@media (max-width:@medium_viewport) {
   .ImageCard_Carousel .container {
     max-width: 100%;
     padding: 0 78px;
   }
 }
 
-@media (max-width:991px) {
+@media (max-width:@medium_viewport) {
 
   .ImageCard_Carousel .owl-prev,
   .ImageCard_Carousel .owl-next {
@@ -3475,10 +3531,10 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   }
 }
 
-@media (max-width:767px) {
+@media (max-width:@small_viewport) {
   .ImageCard_Carousel h2 {
-    font-size: 24px;
-    line-height: 40px;
+    font-size: 2.4rem;
+    line-height: @line_height_base;
     margin-bottom: 16px;
   }
 }
@@ -3488,37 +3544,37 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   top: 58%;
 }
 
-@media (max-width:1800px) {
+@media (max-width:@extra_large_viewport) {
   .playButton .video_play {
     top: 50%;
   }
 }
 
-@media (max-width:1500px) {
+@media (max-width:@large_viewport) {
   .playButton .video_play {
     top: 48%;
   }
 }
 
-@media (max-width:1365px) {
+@media (max-width:@medium_viewport) {
   .playButton .video_play {
     top: 44%;
   }
 }
 
-@media (max-width:1200px) {
+@media (max-width:@medium_viewport) {
   .playButton .video_play {
     top: 36%;
   }
 }
 
-@media (max-width:991px) {
+@media (max-width:@medium_viewport) {
   .playButton .video_play {
     top: 34%;
   }
 }
 
-@media (max-width:767px) {
+@media (max-width:@small_viewport) {
   .playButton .video_play {
     top: 40%;
   }
@@ -3532,12 +3588,12 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 .buttonCTA {
   align-items: center;
   padding: 48.5px 0;
-  margin-bottom: 72px;
+  margin-bottom: 7.2rem;
 }
 
 .buttonCTA .Button_Link,
 .buttonCTA .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button {
-  margin: 12px 0;
+  margin: 1.2rem 0;
 }
 
 .buttonCTA h2 {
@@ -3548,7 +3604,7 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   display: none;
 }
 
-@media (min-width:992px) {
+@media (min-width:@small_viewport) {
   .buttonCTA .order-lg-2 {
     padding-left: 15px;
   }
@@ -3563,7 +3619,7 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   }
 }
 
-@media (max-width:991px) {
+@media (max-width:@medium_viewport) {
   .buttonCTA {
     text-align: center;
   }
@@ -3580,10 +3636,10 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   }
 }
 
-@media (max-width:767px) {
+@media (max-width:@small_viewport) {
   .buttonCTA h2 {
-    font-size: 24px;
-    line-height: 40px;
+    font-size: 2.4rem;
+    line-height: @line_height_base;
   }
 }
 
@@ -3592,62 +3648,59 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 /** Announcements Start **/
 
 .announcement-block {
-  margin-bottom: 72px;
+  margin-bottom: 7.2rem;
 }
 
 .announcement_Wrapper {
   /* margin: 23.5px 0; */
   display: inline-block;
   width: 100%;
-  border: #8E6F3E 1px solid;
+  border: @border_color_social 1px solid;
   padding: 21px 38px;
 }
 
 .announcement_Wrapper.blueBg {
-  background: @primary_background_color;
+  background: @background_color_alt;
 }
 
 .announcement_Wrapper p {
-  font-family: @primary_font_family;
-  font-weight: 400;
-  line-height: 22px;
+  font-family: @font_family_base;
+  font-weight: @font_weight_base;
+  line-height: @line_height_base;
 }
 
 .announcement_Wrapper p strong {
-  font-weight: 700;
-  font-family: @primary_font_family;
+  font-weight: @font_weight_bold;
+  font-family: @font_family_base;
 }
 
 .announcement_Wrapper p a {
-  color: #990000;
-  font-weight: 700;
+  color: @iu_red;
+  font-weight: @font_weight_bold;
   text-decoration: underline;
 }
 
 .announcement_Wrapper p a:hover,
 .announcement_Wrapper p a:focus {
-  color: #000;
+  color: @font_color_base;
   text-decoration: none;
 }
 
-.announcement_Wrapper.blueBg {
-  background: @primary_background_color;
-}
 
 .announcement_Wrapper.blueBg p {
-  color: #fff;
+  color: @font_color_inverse;
   text-decoration: none;
 }
 
 .announcement_Wrapper.blueBg p a {
-  color: #fff;
-  font-weight: 700;
+  color: @font_color_inverse;
+  font-weight: @font_weight_bold;
   text-decoration: underline;
 }
 
 .announcement_Wrapper.blueBg p a:hover,
 .announcement_Wrapper.blueBg p a:focus {
-  color: #fff;
+  color: @font_color_inverse;
   text-decoration: none;
 }
 
@@ -3661,9 +3714,9 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 /** News start **/
 
 .newsWrapper h1 {
-  border-bottom: #00A5DB 1px solid;
-  margin-top: 72px;
-  margin-bottom: 72px;
+  border-bottom: @ri_blue 1px solid;
+  margin-top: 7.2rem;
+  margin-bottom: 7.2rem;
 }
 
 .news_block_image img {
@@ -3671,8 +3724,8 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 }
 
 .newsList li {
-  margin-bottom: 72px;
-  border-bottom: #00A5DB 1px solid;
+  margin-bottom: 7.2rem;
+  border-bottom: @ri_blue 1px solid;
   padding-bottom: 10px;
 }
 
@@ -3682,21 +3735,21 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 
 .news_block_heading a:hover,
 .news_block_heading a:focus {
-  color: #990000;
+  color: @iu_red;
 }
 
 .news_search input.form-control {
   border: none;
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 18px;
-  color: #000;
+  font-family: @font_family_light;
+  font-weight: @font_weight_light;
+  font-size: 1.8rem;
+  line-height: @line_height_base;
+  color: @font_color_base;
   margin-left: 0 !important;
 }
 
 .news_search input.form-control::placeholder {
-  color: #000;
+  color: @font_color_base;
 }
 
 .news_search input.form-control:focus,
@@ -3705,23 +3758,23 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 }
 
 .news_search .input-group.add-on {
-  border: #414141 1px solid;
-  margin-bottom: 40px;
+  border: @border_color_tint_3 1px solid;
+  margin-bottom: 4.0rem;
 }
 
 .news_search .input-group.add-on .input-group-btn button {
-  width: 48px;
+  width: 4.8rem;
   height: 38px;
   background: url(/wp-content/themes/ctsi/assets/images/search.svg) no-repeat center;
   z-index: 1;
 }
 
-/* 
+/*
 .news_search .input-group.add-on .input-group-btn button:focus,
 .news_search .input-group.add-on .input-group-btn button:focus-visible {
   outline: none !important;
   box-shadow: none !important;
-} 
+}
 */
 
 .news_search .input-group.add-on .input-group-btn button img {
@@ -3729,11 +3782,11 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 }
 
 .resetBtn a {
-  color: @primary_background_color;
+  color: @font_color_alt;
   text-decoration: underline;
-  font-family: @primary_font_family;
-  font-weight: 400;
-  margin-left: 20px;
+  font-family: @font_family_base;
+  font-weight: @font_weight_base;
+  margin-left: 2.0rem;
 }
 
 .resetBtn a:hover,
@@ -3742,16 +3795,16 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 }
 
 .news_filter {
-  padding-left: 40px;
+  padding-left: 4.0rem;
 }
 
 .news_filter_heading {
-  font-family: @primary_font_family;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 30px;
-  color: #000;
-  margin-bottom: 30px;
+  font-family: @font_family_base;
+  font-weight: @font_weight_base;
+  font-size: 2.2rem;
+  line-height: @line_height_base;
+  color: @font_color_base;
+  margin-bottom: 3.0rem;
 }
 
 .news_filter .Button_Link {
@@ -3780,32 +3833,32 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   text-decoration: none !important;
   padding: 0px 5px;
   margin: 0px 4px;
-  color: #000;
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 38px;
-  height: 40px;
-  width: 40px;
+  color: @font_color_base;
+  font-weight: @font_weight_light;
+  font-size: 2.0rem;
+  line-height: @line_height_base;
+  height: 4.0rem;
+  width: 4.0rem;
   text-align: center;
 }
 
 .pagination_div ul li a:hover,
 .pagination_div ul li a:focus {
   text-decoration: underline !important;
-  color: #000 !important;
+  color: @font_color_base !important;
 }
 
 .pagination_div ul li .current {
   font-weight: 900;
-  color: @primary_background_color;
+  color: @font_color_alt;
   text-decoration: underline;
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 4.0rem;
+  height: 4.0rem;
   text-align: center;
   padding: 4px 0 0 0;
   margin: 0px 4px;
-  font-size: 20px;
+  font-size: 2.0rem;
 }
 
 .pagination_div ul li a:hover {
@@ -3824,19 +3877,19 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   position: relative;
 }
 
-@media (max-width:991px) {
+@media (max-width:@medium_viewport) {
   .newsList li {
-    margin-bottom: 40px;
+    margin-bottom: 4.0rem;
   }
 
   .header-news {
-    margin-bottom: 40px;
+    margin-bottom: 4.0rem;
   }
 
   .newsWrapper h1 {
-    font-size: 30px;
-    line-height: 38px;
-    margin: 40px 0;
+    font-size: 3.0rem;
+    line-height: @line_height_base;
+    margin: 4.0rem 0;
   }
 
   .news_filter {
@@ -3845,11 +3898,11 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
   }
 
   .news_block_image {
-    margin-bottom: 40px;
+    margin-bottom: 4.0rem;
   }
 }
 
-@media (max-width:767px) {
+@media (max-width:@small_viewport) {
   .resetBtn a {
     margin-left: 10px;
   }
@@ -3860,7 +3913,7 @@ main .locationBlock_Cont ul:not(.list-unstyled) li.blue:before {
 /** News block start **/
 
 .news_block_section {
-  margin-bottom: 72px;
+  margin-bottom: 7.2rem;
 }
 
 ul.wp-block-latest-posts {
@@ -3893,17 +3946,17 @@ main ul.wp-block-latest-posts:not(.list-unstyled) li:before {
 }
 
 .wp-block-latest-posts__featured-image img {
-  border: #00A5DB 1px solid;
+  border: @ri_blue 1px solid;
   max-width: 100%;
 }
 
 .wp-block-latest-posts__post-title {
-  padding: 40px 48px 24px;
-  font-family: @primary_font_family !important;
-  font-weight: 700 !important;
-  font-size: 20px;
-  line-height: 26px;
-  color: #000 !important;
+  padding: 4.0rem 4.8rem 2.4rem;
+  font-family: @font_family_base !important;
+  font-weight: @font_weight_bold !important;
+  font-size: 2.0rem;
+  line-height: @line_height_base;
+  color: @font_color_base !important;
   display: block;
   margin-bottom: 0;
 }
@@ -3919,18 +3972,18 @@ ul.wp-block-latest-posts li a:hover .wp-block-latest-posts__post-title {
 
 .wp-block-latest-posts__post-author {
   font-size: 16px;
-  line-height: 22px;
-  color: #000;
-  font-family: 'Roboto_Md';
+  line-height: @line_height_base;
+  color: @font_color_base;
+  font-family: @font_family_medium;
   padding: 0 50px;
 }
 
 .wp-block-latest-posts__post-date {
   font-size: 16px;
-  line-height: 22px;
-  color: #000;
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
+  line-height: @line_height_base;
+  color: @font_color_base;
+  font-family: @font_family_light;
+  font-weight: @font_weight_light;
   padding: 0 50px;
 }
 
@@ -3939,22 +3992,22 @@ ul.wp-block-latest-posts li a:hover .wp-block-latest-posts__post-title {
 }
 
 .news_block_section .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button {
-  margin-top: 48px;
+  margin-top: 4.8rem;
   margin-bottom: 0;
 }
 
-@media (max-width:1279px) {
+@media (max-width:@medium_viewport) {
   .wp-block-latest-posts__post-title {
-    padding: 20px;
+    padding: 2.0rem;
   }
 
   .wp-block-latest-posts__post-author,
   .wp-block-latest-posts__post-date {
-    padding: 0 20px;
+    padding: 0 2.0rem;
   }
 }
 
-@media (max-width:991px) {
+@media (max-width:@medium_viewport) {
   ul.wp-block-latest-posts li {
     width: 100%;
     max-width: unset;
@@ -3973,7 +4026,7 @@ ul.wp-block-latest-posts li a:hover .wp-block-latest-posts__post-title {
   }
 
   .wp-block-latest-posts.wp-block-latest-posts__list li {
-    margin-bottom: 30px;
+    margin-bottom: 3.0rem;
   }
 }
 
@@ -3984,7 +4037,7 @@ ul.wp-block-latest-posts li a:hover .wp-block-latest-posts__post-title {
 .wp-block-post-author {
   display: flex;
   align-items: flex-start;
-  gap: 30px;
+  gap: 3.0rem;
   margin-top: 50px;
   margin-bottom: 0;
 }
@@ -3996,20 +4049,20 @@ ul.wp-block-latest-posts li a:hover .wp-block-latest-posts__post-title {
 }
 
 .wp-block-post-author__name {
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
-  font-size: 34px;
-  line-height: 40px;
-  color: #000;
+  font-family: @font_family_light;
+  font-weight: @font_weight_light;
+  font-size: 3.4rem;
+  line-height: @line_height_base;
+  color: @font_color_base;
   position: relative;
-  margin-bottom: 36px;
+  margin-bottom: 3.6rem;
 }
 
 .wp-block-post-author__name:before {
   content: '';
   width: 110px;
   height: 5px;
-  background: #FFC731;
+  background: @background_color_highlight;
   display: inline-block;
   left: 0;
   bottom: -12px;
@@ -4017,7 +4070,7 @@ ul.wp-block-latest-posts li a:hover .wp-block-latest-posts__post-title {
 }
 
 .wp-block-post-author__byline {
-  font-size: 17px;
+  font-size: 1.7rem;
 }
 
 .wp-block-post-author__avatar {
@@ -4034,10 +4087,10 @@ ul.wp-block-latest-posts li a:hover .wp-block-latest-posts__post-title {
 
 .wp-block-post-date time,
 .wp-block-post-author-name {
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 20px;
+  font-family: @font_family_light;
+  font-weight: @font_weight_light;
+  font-size: 1.5rem;
+  line-height: @line_height_base;
 }
 
 .wp-block-post-author-name {
@@ -4049,28 +4102,28 @@ ul.wp-block-latest-posts li a:hover .wp-block-latest-posts__post-title {
   margin-bottom: 67px;
 }
 
-/* 
-@media (max-width:991px) {
+/*
+@media (max-width:@medium_viewport) {
   .wp-block-custom-container.container {
-    margin-bottom: 40px;
-    margin-top: 40px;
+    margin-bottom: 4.0rem;
+    margin-top: 4.0rem;
   }
-} 
+}
 */
 
-@media (max-width:480px) {
+@media (max-width:@small_viewport) {
   .wp-block-post-author {
     flex-direction: column;
     gap: 0;
   }
 
   .wp-block-post-author__avatar {
-    margin-bottom: 30px;
+    margin-bottom: 3.0rem;
   }
 
   .wp-block-post-author__name {
-    font-size: 24px;
-    line-height: 40px;
+    font-size: 2.4rem;
+    line-height: @line_height_base;
     margin-bottom: 16px;
   }
 
@@ -4086,7 +4139,7 @@ ul.wp-block-latest-posts li a:hover .wp-block-latest-posts__post-title {
 
   .single .wp-block-buttons .wp-block-button a.wp-block-button__link.wp-element-button {
     margin-top: 6px;
-    margin-bottom: 40px;
+    margin-bottom: 4.0rem;
   }
 }
 
@@ -4094,85 +4147,85 @@ ul.wp-block-latest-posts li a:hover .wp-block-latest-posts__post-title {
 
 /** Table start **/
 
-/* 
+/*
 .wp-block-table {
   margin: 0;
-} 
+}
 */
 
 .wp-block-table:not(:first-child) {
-  margin-top: 72px;
+  margin-top: 7.2rem;
 }
 .wp-block-table:not(:last-child) {
-  margin-bottom: 72px;
+  margin-bottom: 7.2rem;
 }
 
-/* 
+/*
 .wp-block-table table,
 .wp-element-caption {
-  margin-bottom: 72px;
-} 
+  margin-bottom: 7.2rem;
+}
 */
 
 .wp-element-caption {
-  font-family: 'Roboto_Lt';
-  font-weight: 300;
-  font-size: 10px;
-  line-height: 20px;
-  color: #000;
+  font-family: @font_family_light;
+  font-weight: @font_weight_light;
+  font-size: 1.0rem;
+  line-height: @line_height_expanded;
+  color: @font_color_base;
 }
 
 .wp-element-caption a {
-  font-family: 'Roboto_Md';
-  color: #990000;
+  font-family: @font_family_medium;
+  color: @iu_red;
   text-decoration: underline;
 }
 
 .wp-element-caption a:hover,
 .wp-element-caption a:focus {
-  color: #000;
+  color: @font_color_base;
   text-decoration: none;
 }
 
 .wp-block-table tbody tr th,
 .wp-block-table table thead tr th {
-  font-family: @primary_font_family;
-  font-weight: 700;
-  font-size: 15px;
+  font-family: @font_family_base;
+  font-weight: @font_weight_bold;
+  font-size: 1.5rem;
   text-align: center;
-  line-height: 16px;
-  color: #052D55;
+  line-height: @line_height_base;
+  color: @font_color_table_header;
   padding: 21px 0.5em;
 }
 
 .wp-block-table td {
-  font-family: @primary_font_family;
-  font-weight: 400;
-  font-size: 15px;
+  font-family: @font_family_base;
+  font-weight: @font_weight_base;
+  font-size: 1.5rem;
   text-align: center;
-  line-height: 16px;
-  color: #052D55;
+  line-height: @line_height_base;
+  color: @font_color_table_header;
   padding: 21px 0.5em;
 }
 
 .wp-block-table td a {
-  font-weight: 500;
+  font-weight: @font_weight_medium;
 }
 
 .wp-block-table td a {
-  font-family: 'Roboto_Md';
-  color: #990000;
+  font-family: @font_family_medium;
+  color: @iu_red;
 }
 
 .wp-block-table tbody tr th a {
-  color: #990000;
+  color: @iu_red;
 }
 
 .wp-block-table td a:hover,
 .wp-block-table td a:focus,
 .wp-block-table tbody tr th a:hover,
 .wp-block-table tbody tr th a:focus {
-  color: #000;
+  color: @font_color_base;
   text-decoration: none;
 }
 
@@ -4184,59 +4237,59 @@ ul.wp-block-latest-posts li a:hover .wp-block-latest-posts__post-title {
 }
 
 .wp-block-table.is-style-simple-table table thead tr th {
-  border-color: #00A5DB;
+  border-color: @ri_blue;
   border-right: none;
   border-left: none;
 }
 
 .wp-block-table.is-style-simple-table table thead tr th:last-child,
 .wp-block-table.is-style-simple-table td:last-child {
-  border-right: #00A5DB 1px solid;
+  border-right: @ri_blue 1px solid;
 }
 
 .wp-block-table.is-style-simple-table table thead {
-  border-bottom: #FFC731 2px solid;
-  border-top: #00A5DB 1px solid;
+  border-bottom: @border_color_highlight 2px solid;
+  border-top: @ri_blue 1px solid;
 }
 
 .wp-block-table.is-style-simple-table tbody tr th {
-  border-left: #00A5DB 1px solid;
-  border-right: #FFC731 2px solid;
+  border-left: @ri_blue 1px solid;
+  border-right: @border_color_highlight 2px solid;
 }
 
 .wp-block-table.is-style-simple-table table thead tr td {
-  border-color: #00A5DB;
-  border-left: #00A5DB 1px solid;
-  border-right: #FFC731 2px solid;
+  border-color: @ri_blue;
+  border-left: @ri_blue 1px solid;
+  border-right: @border_color_highlight 2px solid;
 }
 
 .wp-block-table.is-style-simple-table tbody tr:last-child {
-  border-bottom: #00A5DB 1px solid;
+  border-bottom: @ri_blue 1px solid;
 }
 
 .wp-block-table.is-style-simple-table table thead tr td:last-child {
-  border-right: #00A5DB 1px solid;
+  border-right: @ri_blue 1px solid;
 }
 
 .wp-block-table.is-style-simple-table thead tr th:nth-child(even),
 .wp-block-table.is-style-simple-table tbody tr:nth-child(odd) th {
-  background-color: #f3f6f6;
+  background-color: @background_color_tint_1;
 }
 
 .wp-block-table.is-style-simple-table tbody tr:nth-child(odd) td:nth-child(even) {
-  background-color: #e8eded;
+  background-color: @background_color_tint_1;
 }
 
 .wp-block-table.is-style-simple-table tbody tr:nth-child(even) td:nth-child(even) {
-  background-color: #f3f6f6;
+  background-color: @background_color_tint_1;
 }
 
 .wp-block-table.is-style-simple-table tbody tr:nth-child(even) td:nth-child(odd) {
-  background-color: #fff;
+  background-color: @background_color_base;
 }
 
 .wp-block-table.is-style-simple-table tbody tr:nth-child(odd) td:nth-child(odd) {
-  background-color: #f3f6f6;
+  background-color: @background_color_tint_1;
 }
 
 /** is-style-vertical-table **/
@@ -4246,7 +4299,7 @@ ul.wp-block-latest-posts li a:hover .wp-block-latest-posts__post-title {
 }
 
 .wp-block-table.is-style-vertical-table td:last-child {
-  border-right: #00A5DB 1px solid;
+  border-right: @ri_blue 1px solid;
 }
 
 .wp-block-table.is-style-vertical-table tbody tr {
@@ -4254,38 +4307,38 @@ ul.wp-block-latest-posts li a:hover .wp-block-latest-posts__post-title {
 }
 
 .wp-block-table.is-style-vertical-table tbody tr:first-child {
-  border-top: #00A5DB 1px solid;
+  border-top: @ri_blue 1px solid;
 }
 
 .wp-block-table.is-style-vertical-table tbody tr:last-child {
-  border-bottom: #00A5DB 1px solid;
+  border-bottom: @ri_blue 1px solid;
 }
 
 .wp-block-table.is-style-vertical-table tbody th {
   border-top: none;
   border-bottom: none;
-  border-left: #00A5DB 1px solid;
-  border-right: #FFC731 2px solid;
+  border-left: @ri_blue 1px solid;
+  border-right: @border_color_highlight 2px solid;
 }
 
 .wp-block-table.is-style-vertical-table tbody tr:nth-child(odd) td:nth-child(even) {
-  background-color: #e8eded;
+  background-color: @background_color_tint_1;
 }
 
 .wp-block-table.is-style-vertical-table tbody tr:nth-child(even) td:nth-child(even) {
-  background-color: #f3f6f6;
+  background-color: @background_color_tint_1;
 }
 
 .wp-block-table.is-style-vertical-table tbody tr:nth-child(even) td:nth-child(odd) {
-  background-color: #fff;
+  background-color: @background_color_base;
 }
 
 .wp-block-table.is-style-vertical-table tbody tr:nth-child(odd) td:nth-child(odd) {
-  background-color: #f3f6f6;
+  background-color: @background_color_tint_1;
 }
 
 .wp-block-table.is-style-vertical-table tbody tr:nth-child(odd) th {
-  background-color: #f3f6f6;
+  background-color: @background_color_tint_1;
 }
 
 /** is-style-horizontal-table **/
@@ -4296,49 +4349,49 @@ ul.wp-block-latest-posts li a:hover .wp-block-latest-posts__post-title {
 }
 
 .wp-block-table.is-style-horizontal-table table thead {
-  border-bottom: #FFC731 2px solid;
-  border-top: #00A5DB 1px solid;
-  border-left: #00A5DB 1px solid;
-  border-right: #00A5DB 1px solid;
+  border-bottom: @border_color_highlight 2px solid;
+  border-top: @ri_blue 1px solid;
+  border-left: @ri_blue 1px solid;
+  border-right: @ri_blue 1px solid;
 }
 
 .wp-block-table.is-style-horizontal-table table tbody {
-  border-left: #00A5DB 1px solid;
-  border-right: #00A5DB 1px solid;
-  border-bottom: #00A5DB 1px solid;
+  border-left: @ri_blue 1px solid;
+  border-right: @ri_blue 1px solid;
+  border-bottom: @ri_blue 1px solid;
 }
 
 .wp-block-table.is-style-horizontal-table thead tr th:nth-child(even) {
-  background-color: #f3f6f6;
+  background-color: @background_color_tint_1;
 }
 
 .wp-block-table.is-style-horizontal-table tbody tr:nth-child(even) td:nth-child(even) {
-  background-color: #f3f6f6;
+  background-color: @background_color_tint_1;
 }
 
 .wp-block-table.is-style-horizontal-table tbody tr:nth-child(even) td:nth-child(odd) {
-  background-color: #fff;
+  background-color: @background_color_base;
 }
 
 .wp-block-table.is-style-horizontal-table tbody tr:nth-child(odd) td:nth-child(odd) {
-  background-color: #f3f6f6;
+  background-color: @background_color_tint_1;
 }
 
 .wp-block-table.is-style-horizontal-table tbody tr:nth-child(odd) td:nth-child(even) {
-  background-color: #e8eded;
+  background-color: @background_color_tint_1;
 }
 
 p.is-style-table-intro {
-  margin-bottom: 72px;
+  margin-bottom: 7.2rem;
 }
 
-@media (max-width:991px) {
+@media (max-width:@medium_viewport) {
   .wp-block-table table {
     min-width: 900px;
   }
 
   p.is-style-table-intro {
-    margin-bottom: 40px;
+    margin-bottom: 4.0rem;
   }
 }
 
@@ -4347,20 +4400,20 @@ p.is-style-table-intro {
 /** Contact block start **/
 
 .contact-card-container.dark_blue {
-  background-color: @primary_background_color;
+  background-color: @background_color_alt;
 }
 .contact-card-container.dark_blue * {
   color: white;
 }
 .contact-card-inner-container-text {
-  padding: 65px 40px;
+  padding: 6.5rem 4.0rem;
 }
 .contact-image-area {
   min-height: 400px;
 }
 
 .ContactBlock {
-  margin-bottom: 72px;
+  margin-bottom: 7.2rem;
 }
 
 .ContactBlock h2 {
@@ -4368,12 +4421,12 @@ p.is-style-table-intro {
 }
 
 .ContactBlock p {
-  line-height: 25px;
+  line-height: @line_height_base;
   margin-bottom: 0;
 }
 
 .ContactBlock ul li {
-  margin-bottom: 30px;
+  margin-bottom: 3.0rem;
 }
 
 .ContactBlock ul {
@@ -4381,35 +4434,35 @@ p.is-style-table-intro {
 }
 
 
-@media (min-width:768px) {
+@media (min-width:@small_viewport) {
 
-  /* 
+  /*
   .ContactBlock ul {
     column-count: 2;
     break-inside: avoid;
   }
 
   .ContactBlock ul li {
-    padding-right: 24px;
+    padding-right: 2.4rem;
     break-inside: avoid;
     display: inline-block;
     width: 100%;
-  } 
+  }
   */
 
   .ContactBlock ul {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 20px;
+    column-gap: 2.0rem;
     justify-content: center;
   }
 
   .ContactBlock ul li {
-    flex: 1 1 calc(33.33% - 20px);
+    flex: 1 1 calc(33.33% - 2.0rem);
   }
 
   .ContactBlock ul li:nth-child(n) {
-    max-width: calc(33.33% - 20px);
+    max-width: calc(33.33% - 2.0rem);
   }
 
   .ContactBlock h2 {
@@ -4432,13 +4485,13 @@ p.is-style-table-intro {
 }
 
 .ContactBlock.dark_blue {
-  background-color: @primary_background_color;
-  padding-top: 72px;
-  padding-bottom: 72px;
+  background-color: @background_color_alt;
+  padding-top: 7.2rem;
+  padding-bottom: 7.2rem;
 }
 
 .ContactBlock.dark_blue * {
-  color: #fff !important;
+  color: @font_color_inverse !important;
 }
 
 /** Contact block end **/

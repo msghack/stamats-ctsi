@@ -4,6 +4,7 @@
 function fonts_load() {
 
   $font_dir = get_stylesheet_directory()."/assets/fonts";
+  $font_uri = get_stylesheet_directory_uri()."/assets/fonts";
   $font_exts = [
     'woff2',
     'woff',
@@ -21,38 +22,102 @@ function fonts_load() {
   while( $entry = readdir( $fh ) ) {
     $ext = mb_strtolower( pathinfo( $entry, PATHINFO_EXTENSION ) );
     if( in_array( $ext, $font_exts ) ) {
-      printf( $format, $entry, $ext, PHP_EOL );
+      printf( $format, $font_uri.'/'.$entry, $ext, PHP_EOL );
     }
   }
 }
 
 add_action('wp_head', 'fonts_load', 1);
 
-function styles_enqueues()
-{
-    wp_enqueue_style('ctsi-bootstrap', get_stylesheet_directory_uri() . "/assets/css/bootstrap.min.css",array(),mt_rand(),'all');
-    wp_enqueue_style('ctsi-font', get_stylesheet_directory_uri() . "/assets/css/fonts/stylesheet.css",array(),mt_rand(),'all');
-    wp_enqueue_style('ctsi-fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css",array(),mt_rand(),'all');
-    wp_enqueue_style('ctsi-owl-carousel', get_stylesheet_directory_uri() . "/assets/css/owl.carousel.min.css",array(),mt_rand(),'all');
-    wp_enqueue_style('ctsi-style', get_stylesheet_uri(),array(),mt_rand(),'all');
+function enqueue_admin_styles() {
+  wp_enqueue_style(
+    'admin-styles',
+    get_stylesheet_directory_uri() . '/admin-style.css'
+  );
+}
+add_action( 'admin_enqueue_scripts', 'enqueue_admin_styles' );
+
+
+function styles_enqueues() {
+  wp_enqueue_style(
+    'ctsi-bootstrap',
+    get_stylesheet_directory_uri() . "/assets/css/bootstrap.min.css",
+    array(),
+    mt_rand(),
+    'all'
+  );
+  wp_enqueue_style(
+    'ctsi-font',
+    get_stylesheet_directory_uri() . "/assets/fonts/stylesheet.css",
+    array(),
+    mt_rand(),
+    'all'
+  );
+  wp_enqueue_style(
+    'ctsi-fontawesome',
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css",
+    array(),
+    mt_rand(),
+    'all'
+  );
+  wp_enqueue_style(
+    'ctsi-owl-carousel',
+    get_stylesheet_directory_uri() . "/assets/css/owl.carousel.min.css",
+    array(),
+    mt_rand(),
+    'all'
+  );
+  wp_enqueue_style(
+    'ctsi-style',
+    get_stylesheet_uri(),
+    array(),
+    mt_rand(),
+    'all'
+  );
 }
 add_action('wp_enqueue_scripts', 'styles_enqueues');
 
-function script_enqueues()
-{
-    wp_enqueue_script("ctsi-bootstrap-bundle", get_stylesheet_directory_uri() . "/assets/js/bootstrap.bundle.min.js", array("jquery"), mt_rand(),false);
-    wp_enqueue_script("ctsi-jqueryui", get_stylesheet_directory_uri() . "/assets/js/jquery-ui.min.js", array("ctsi-bootstrap-bundle"), mt_rand(),false);
-    wp_enqueue_script("ctsi-owl-carousel-min", get_stylesheet_directory_uri() . "/assets/js/owl.carousel.min.js", array("ctsi-jqueryui"), mt_rand(),false);
-    wp_enqueue_script("ctsi-main", get_stylesheet_directory_uri() . "/assets/js/script.js", array("ctsi-owl-carousel-min"), mt_rand(),false);
+function script_enqueues() {
+  wp_enqueue_script(
+    "ctsi-bootstrap-bundle",
+    get_stylesheet_directory_uri() . "/assets/js/bootstrap.bundle.min.js",
+    array("jquery"),
+    mt_rand(),
+    false
+  );
+  wp_enqueue_script(
+    "ctsi-jqueryui",
+    get_stylesheet_directory_uri() . "/assets/js/jquery-ui.min.js",
+    array("ctsi-bootstrap-bundle"),
+    mt_rand(),
+    false
+  );
+  wp_enqueue_script(
+    "ctsi-owl-carousel-min",
+    get_stylesheet_directory_uri() . "/assets/js/owl.carousel.min.js",
+    array("ctsi-jqueryui"),
+    mt_rand(),
+    false
+  );
+  wp_enqueue_script(
+    "ctsi-main",
+    get_stylesheet_directory_uri() . "/assets/js/script.js",
+    array("ctsi-owl-carousel-min"),
+    mt_rand(),
+    false
+  );
 }
 add_action('wp_enqueue_scripts', 'script_enqueues');
 
-register_nav_menus(array(
+register_nav_menus(
+  [
     'main-menu-links' => 'Main Menu Links',
     'footer-resource-menu' => 'Footer Resource Menu'
-));
-function themename_custom_logo_setup()
-{
+  ]
+);
+
+
+function themename_custom_logo_setup() {
     // $defaults = array(
     //     'height'               => 100,
     //     'width'                => 400,
