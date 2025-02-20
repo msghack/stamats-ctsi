@@ -51,6 +51,7 @@ wp-config.php
 *.zip
 jed
 jed[0-9]
+style-reference-css
 
 #
 # eclipse stuff
