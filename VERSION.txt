@@ -1,3 +1,5 @@
 ===================================================================
 1.0.14              04 Dec 2024
  - tweek captions
+2.0.0               04 Feb 2025
+ - refactor for accessibility issues

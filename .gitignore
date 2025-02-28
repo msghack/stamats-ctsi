@@ -49,3 +49,15 @@ wp-config.php
 #
 /scripts
 *.zip
+jed
+jed[0-9]
+style-reference-css
+
+#
+# eclipse stuff
+.editorconfig
+.settings
+.project
+.buildpath
+
+

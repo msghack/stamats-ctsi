@@ -49,11 +49,11 @@ $utility_links = get_field("utility_links", "option");
             </div>
             <div class="container d-flex flex-wrap">
                 <a href="<?php echo esc_url(home_url('/')); ?>"
-                    class="d-flex align-items-center me-xl-auto CTSI_logo"><img
+                    class="d-flex align-items-center me-lg-auto CTSI_logo"><img
                         src="<?= get_field("header_logo", "option")["url"] ?>"
                         alt="<?= get_field("header_logo", "option")["alt"] ?>"></a>
-                <div class="col-xl-auto mobile_menu_wrapper">
-                    <nav class="navbar navbar-expand-xl MainMenu" role="navigation">
+                <div class="col-lg-auto mobile_menu_wrapper">
+                    <nav class="navbar navbar-expand-lg MainMenu" role="navigation">
                         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#main_nav" aria-expanded="true" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>

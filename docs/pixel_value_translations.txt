@@ -1,0 +1,43 @@
+@font_size_base               : 1.6rem;
+@tiny_viewport                : 48.0rem;
+@small_viewport               : 76.8rem;
+@medium_viewport              : 128.0rem;
+@large_viewport               : 160.0rem;
+@extra_large_viewport         : 190.0rem;
+
+tiny
+370px
+480px
+481px
+
+small
+700px
+767px
+768px
+768px 
+768px  
+
+medium 
+991px
+992px
+992px 
+992px  
+1023px
+1200px
+1200px 
+1200px  
+1279px
+1280px
+
+large
+1365px
+1366px
+1440px
+1500px
+1500px 
+
+larger than large
+1800px
+1900px
+
+
